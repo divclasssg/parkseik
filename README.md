@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# parkseik
 
-## Getting Started
+[`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app)으로 생성한 [Next.js](https://nextjs.org) 프로젝트입니다.
 
-First, run the development server:
+## 기술 스택
+
+- **Next.js** 16.2.6 (App Router)
+- **React** 19.2.4
+- **ESLint** 9 (`eslint-config-next`)
+- **React Compiler** (`babel-plugin-react-compiler`)
+
+## 시작하기
+
+먼저 개발 서버를 실행합니다.
 
 ```bash
 npm run dev
-# or
+# 또는
 yarn dev
-# or
+# 또는
 pnpm dev
-# or
+# 또는
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+브라우저에서 [http://localhost:3000](http://localhost:3000) 을 열어 결과를 확인하세요.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+`src/app/page.js` 파일을 수정하면 페이지를 편집할 수 있습니다. 파일을 저장하면 페이지가 자동으로 갱신됩니다.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+이 프로젝트는 [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts)를 사용해 Vercel이 만든 새 글꼴 [Geist](https://vercel.com/font)를 자동으로 최적화하여 로드합니다.
 
-## Learn More
+## 사용 가능한 스크립트
 
-To learn more about Next.js, take a look at the following resources:
+| 명령어 | 설명 |
+| --- | --- |
+| `npm run dev` | 개발 서버 실행 |
+| `npm run build` | 프로덕션 빌드 생성 |
+| `npm run start` | 빌드된 결과물로 서버 실행 |
+| `npm run lint` | ESLint 검사 |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 프로젝트 구조
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+.
+├── public/            # 정적 자산 (이미지, 아이콘 등)
+├── src/
+│   └── app/           # App Router 라우트와 레이아웃
+├── eslint.config.mjs  # ESLint 설정
+├── next.config.mjs    # Next.js 설정
+└── package.json
+```
 
-## Deploy on Vercel
+## 더 알아보기
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Next.js를 더 알아보려면 아래 자료를 참고하세요.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js 공식 문서](https://nextjs.org/docs) — Next.js의 기능과 API를 다룹니다.
+- [Learn Next.js](https://nextjs.org/learn) — 대화형 Next.js 튜토리얼입니다.
+- [Next.js GitHub 저장소](https://github.com/vercel/next.js) — 피드백과 기여를 환영합니다.
+
+## Vercel에 배포하기
+
+Next.js 앱을 배포하는 가장 쉬운 방법은 Next.js 제작자들이 만든 [Vercel 플랫폼](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)을 사용하는 것입니다.
+
+자세한 내용은 [Next.js 배포 문서](https://nextjs.org/docs/app/building-your-application/deploying)를 참고하세요.
