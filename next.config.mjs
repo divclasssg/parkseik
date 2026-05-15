@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
   reactCompiler: true,
+  sassOptions: {
+    implementation: "sass-embedded",
+  },
 };
 
 export default nextConfig;
