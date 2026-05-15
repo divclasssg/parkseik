@@ -157,6 +157,12 @@ textarea,
 select {
     font: inherit;
     color: inherit;
+    font-synthesis: none;
+    -moz-font-feature-settings: "kern";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    direction: ltr;
+    text-align: left;
 }
 
 p,
