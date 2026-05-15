@@ -40,13 +40,13 @@ h6 {
 }
 
 :focus-visible {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid #1d1d1f;
     outline-offset: 2px;
 }
 
 ::selection {
-    background-color: var(--color-text);
-    color: var(--color-bg);
+    background-color: #1d1d1f;
+    color: #fff;
 }
 
 /* Accessibility utilities */
@@ -68,8 +68,6 @@ h6 {
     top: -40px;
     left: 0;
     padding: 8px 16px;
-    background: var(--color-text);
-    color: var(--color-bg);
     z-index: 9999;
 
     &:focus {
@@ -86,4 +84,8 @@ h6 {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+.main {
+    min-height: calc(100svh - 44px - 64px);
 }

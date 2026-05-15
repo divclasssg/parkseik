@@ -1,5 +1,6 @@
 import "./_style/style.scss";
 import Globalnav from "./_components/globalnav";
+import Globalfooter from "./_components/globalfooter";
 
 export const metadata = {
     title: "parkseik",
@@ -44,6 +45,7 @@ export default function RootLayout({ children }) {
             <body>
                 <Globalnav />
                 {children}
+                <Globalfooter />
             </body>
         </html>
     );
