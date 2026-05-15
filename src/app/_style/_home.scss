@@ -11,13 +11,14 @@
     color: #1d1d1f;
 
     .header-home {
-        padding: 64px 0 64px 64px;
+        padding: 64px 0 40px 64px;
 
         &-headline {
             font-size: 18px;
             font-weight: 500;
             line-height: 1em;
             letter-spacing: 0.015em;
+            text-transform: lowercase;
 
             span {
                 display: block;
