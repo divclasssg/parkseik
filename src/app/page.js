@@ -2,24 +2,23 @@ import Link from "next/link";
 
 export default function Home() {
     return (
-        <main className="main main-home">
+        <main id="main-content" className="main main-home">
             <header className="header-home">
-                <h1 className="visuallyhidden">PARK, Seik&apos; Portfolio</h1>
                 <h2 className="header-home-headline">
                     <span>세익 -- 世益 · [ se.ik ]</span>
                     Better experiences, for a better world.
                 </h2>
             </header>
-            <nav className="homenav">
+            <nav className="homenav" aria-label="주요 섹션">
                 <div className="homenav-content">
                     <ul className="homenav-list">
                         <li className="homenav-item">
-                            <Link href="/about" target="_self" className="homenav-link">
+                            <Link href="/about" className="homenav-link">
                                 About
                             </Link>
                         </li>
                         <li className="homenav-item">
-                            <Link href="/projects" target="_self" className="homenav-link">
+                            <Link href="/projects" className="homenav-link">
                                 Projects
                             </Link>
                             <div className="homenav-depth2">
@@ -27,7 +26,6 @@ export default function Home() {
                                     <li className="homenav-depth2-item">
                                         <Link
                                             href="/projects"
-                                            target="_self"
                                             className="homenav-depth2-link"
                                         >
                                             <strong>이음,</strong>
@@ -38,7 +36,6 @@ export default function Home() {
                                     <li className="homenav-depth2-item">
                                         <Link
                                             href="/projects/eum"
-                                            target="_self"
                                             className="homenav-depth2-link"
                                         >
                                             <strong>Eum,</strong>
@@ -49,7 +46,6 @@ export default function Home() {
                                     <li className="homenav-depth2-item">
                                         <Link
                                             href="/projects/cronometer"
-                                            target="_self"
                                             className="homenav-depth2-link"
                                         >
                                             <strong>Cronometer,</strong>
@@ -60,7 +56,6 @@ export default function Home() {
                                     <li className="homenav-depth2-item">
                                         <Link
                                             href="/projects/liverpoolfc"
-                                            target="_self"
                                             className="homenav-depth2-link"
                                         >
                                             <strong>Liverpool FC,</strong>
@@ -72,7 +67,7 @@ export default function Home() {
                             </div>
                         </li>
                         <li className="homenav-item">
-                            <Link href="/research" target="_self" className="homenav-link">
+                            <Link href="/research" className="homenav-link">
                                 Research
                             </Link>
                         </li>

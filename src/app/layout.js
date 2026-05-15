@@ -43,6 +43,10 @@ export default function RootLayout({ children }) {
     return (
         <html lang="ko">
             <body>
+                <a href="#main-content" className="skip-to-content">
+                    본문 바로가기
+                </a>
+                <h1 className="visuallyhidden">PARK, Seik&apos; Portfolio</h1>
                 <Globalnav />
                 {children}
                 <Globalfooter />

@@ -1,9 +1,7 @@
 export default function Eum() {
     return (
-        <main className="main main-eum">
-            <header>
-                <h1>Eum</h1>
-            </header>
+        <main id="main-content" className="main main-eum">
+            <h1>EUM</h1>
         </main>
     );
 }
