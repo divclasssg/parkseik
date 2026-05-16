@@ -14,7 +14,7 @@ export default function Localnav() {
                         <li>
                             <button
                                 type="button"
-                                className="button-project-more"
+                                className="button-small button-small-secondary button-project-more"
                                 aria-expanded="false"
                                 aria-controls="localnav-expanded"
                             >
@@ -26,14 +26,14 @@ export default function Localnav() {
                                 href="/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="link-project-live"
+                                className="button-small button-small-primary link-project-live"
                             >
                                 Eum Demo 체험하기
                             </Link>
                         </li>
                     </ul>
                 </div>
-                <div id="localnav-expanded" className="content-expand-wrapper">
+                <div id="localnav-expanded" className="content-expanded-wrapper">
                     <nav className="menu-wrapper" aria-label="사이트 메뉴">
                         <ul className="menu-list">
                             <li>
@@ -57,15 +57,39 @@ export default function Localnav() {
                                 </Link>
                             </li>
                         </ul>
+                        <button type="button" className="button-close-expanded">
+                            <span className="blind">닫기</span>
+                        </button>
                     </nav>
-                    <div className="project-action">
-                        <div className="project-name">
+                    <div className="content-action">
+                        <div className="content-name">
                             <p>Eum</p>
                         </div>
-                        <Link href="/" target="_blank" rel="noopener noreferrer">
+                        <Link
+                            href="/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="button-small button-small-primary"
+                        >
                             Eum Demo 체험하기
                         </Link>
                     </div>
+                    <nav className="contentnav" aria-label="프로젝트 목차">
+                        <ul className="contentnav-list">
+                            <li>
+                                <Link href="#overview">개요</Link>
+                            </li>
+                            <li>
+                                <Link href="#background">배경</Link>
+                            </li>
+                            <li>
+                                <Link href="#designProcess">디자인 프로세스</Link>
+                            </li>
+                            <li>
+                                <Link href="#keytakeaway">주요 시사점</Link>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </nav>
