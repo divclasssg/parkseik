@@ -1,4 +1,5 @@
 import Link from "next/link";
+import IconClose from "./icons/close";
 
 export default function Localnav() {
     return (
@@ -58,7 +59,7 @@ export default function Localnav() {
                             </li>
                         </ul>
                         <button type="button" className="button-close-expanded">
-                            <span className="blind">닫기</span>
+                            <IconClose size={24} />
                         </button>
                     </nav>
                     <div className="content-action">

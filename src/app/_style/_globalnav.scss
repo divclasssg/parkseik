@@ -10,6 +10,8 @@
         Arial,
         sans-serif;
     height: 44px;
+    max-width: 2560px;
+    min-width: 320px;
 
     &-content {
         display: flex;

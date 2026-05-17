@@ -1,0 +1,14 @@
+.main-projects-eum {
+    .section-hero {
+        .hero-headline {
+            background: linear-gradient(90deg, #0071e3 0%, #111827 70%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .button-elevated {
+            background: linear-gradient(90deg, #0071e3 0%, #111827 50%);
+        }
+    }
+}

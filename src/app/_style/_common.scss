@@ -16,6 +16,8 @@ body {
         "Helvetica Neue",
         Arial,
         sans-serif;
+    max-width: 2560px;
+    min-width: 320px;
     font-size: 4px;
     font-weight: 400;
     line-height: 1.58824;
@@ -88,4 +90,11 @@ h6 {
 
 .main {
     min-height: calc(100svh - 44px - 64px);
+}
+
+.section {
+    &-content {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
 }

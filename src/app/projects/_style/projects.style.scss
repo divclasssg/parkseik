@@ -1,0 +1,59 @@
+.main-projects {
+    font-family:
+        "Spoqa Han Sans Neo",
+        "SUIT",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+    color: #1d1d1f;
+    font-size: 18px;
+
+    .section-hero {
+        padding: 64px 0 96px;
+
+        .hero-marquee {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1em;
+            padding-bottom: 12px;
+        }
+
+        .hero-headline {
+            background: #1d1d1f;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1em;
+            padding-bottom: 12px;
+        }
+
+        .hero-violator {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 1em;
+            color: #66666f;
+            padding-bottom: 24px;
+        }
+
+        .button-elevated {
+            border-radius: 8px;
+            background: #1d1d1f;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 48px;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1em;
+            color: #fff;
+            padding: 0 24px;
+        }
+    }
+}
