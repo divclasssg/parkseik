@@ -13,7 +13,10 @@
     font-size: 18px;
 
     .section-hero {
+        height: calc(100svh - 44px - 64px); // globalnav(44) + localnav(64)
         padding: 64px 0 96px;
+        display: flex;
+        flex-direction: column;
 
         .hero-marquee {
             font-size: 24px;

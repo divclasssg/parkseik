@@ -94,6 +94,7 @@ h6 {
 
 .section {
     &-content {
+        width: 100%; // flex item일 때 margin:auto가 stretch를 무효화하는 것 보정
         max-width: 1024px;
         margin: 0 auto;
     }
