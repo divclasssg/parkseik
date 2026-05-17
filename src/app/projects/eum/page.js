@@ -72,12 +72,12 @@ export default function Eum() {
                         const isActive = i === active;
                         const frameClass =
                             v.frame === "phone"
-                                ? `phone-frame phone-frame--${v.key}`
-                                : `monitor-frame monitor-frame--${v.key}`;
+                                ? `phone-frame phone-frame-${v.key}`
+                                : `monitor-frame monitor-frame-${v.key}`;
                         const videoEl = (
                             <video
                                 ref={refs[i]}
-                                className={`video-item video-item--${v.key}`}
+                                className={`video-item video-item-${v.key}`}
                                 src={asset(v.src)}
                                 width={v.w}
                                 height={v.h}
@@ -90,17 +90,17 @@ export default function Eum() {
                         return (
                             <div
                                 key={v.key}
-                                className={`${frameClass}${isActive ? " is-active" : ""}`}
+                                className={`${frameClass}${isActive ? " active" : ""}`}
                                 aria-hidden={!isActive}
                             >
                                 {v.frame === "monitor" ? (
-                                    <div className="monitor-frame__screen">{videoEl}</div>
+                                    <div className="monitor-frame-screen">{videoEl}</div>
                                 ) : (
                                     videoEl
                                 )}
                                 {v.frame === "phone" && (
                                     <img
-                                        className="phone-frame__bezel"
+                                        className="phone-frame-bezel"
                                         src="/images/iPhone 17 Pro Max - Deep Blue - Portrait.png"
                                         alt=""
                                         aria-hidden="true"

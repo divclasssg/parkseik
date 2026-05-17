@@ -36,7 +36,7 @@
                 visibility: hidden;
                 transition: opacity 200ms ease;
 
-                &.is-active {
+                &.active {
                     opacity: 1;
                     visibility: visible;
                 }
@@ -46,10 +46,10 @@
             .phone-frame {
                 aspect-ratio: 1470 / 3000;
 
-                &--01 {
+                &-01 {
                     max-width: 735px;
                 } // 안쪽 비디오 660 CSS px (레티나 2x 보장)
-                &--03 {
+                &-03 {
                     max-width: 431px;
                 } // 안쪽 비디오 387 CSS px (레티나 2x 보장)
 
@@ -67,7 +67,7 @@
                     object-fit: cover;
                 }
 
-                .phone-frame__bezel {
+                .phone-frame-bezel {
                     position: absolute;
                     inset: 0;
                     width: 100%;
@@ -80,7 +80,7 @@
             }
 
             // 02: CSS 미니멀 모니터 베젤.
-            // 외곽(.monitor-frame)에는 aspect-ratio를 두지 않고 안쪽 __screen에 비디오 비율을 부여
+            // 외곽(.monitor-frame)에는 aspect-ratio를 두지 않고 안쪽 -screen에 비디오 비율을 부여
             // → content-box가 정확히 비디오 비율이라 cover/letterbox 모두 0
             // 외곽 max-width: 100%로 풀어 wrapper 높이를 최대로 채움
             .monitor-frame {
@@ -90,7 +90,7 @@
                 border-radius: 16px;
                 box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 
-                .monitor-frame__screen {
+                .monitor-frame-screen {
                     height: 100%;
                     max-height: 100%;
                     max-width: 1512px; // 레티나 보장: 비디오 소스 3024 ÷ 2
