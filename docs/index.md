@@ -1,6 +1,6 @@
 # parkseik — 개발 문서
 
-현재 버전: **v0.3.16**
+현재 버전: **v0.3.17**
 
 ## 버전 목록
 
@@ -26,6 +26,7 @@
 | [v0.3.14](./changelog/v0.3.14.md) | 클래스명 BEM 제거 + flat 대시 컨벤션 명문화    | 2026-05-17 |
 | [v0.3.15](./changelog/v0.3.15.md) | Scroll Scrub Pattern 레퍼런스 문서 포팅       | 2026-05-17 |
 | [v0.3.16](./changelog/v0.3.16.md) | /projects/eum Key Screens 섹션 구현            | 2026-05-17 |
+| [v0.3.17](./changelog/v0.3.17.md) | .section-headline p 반응형 폭 보완            | 2026-05-17 |
 
 ## 패턴 문서
 
