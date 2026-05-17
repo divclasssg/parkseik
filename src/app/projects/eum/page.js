@@ -11,6 +11,7 @@ const VIDEOS = [
         w: 1320,
         h: 2868,
         frame: "phone",
+        rate: 10,
     },
     {
         key: "02",
@@ -18,6 +19,7 @@ const VIDEOS = [
         w: 3024,
         h: 1964,
         frame: "monitor",
+        rate: 10,
     },
     {
         key: "03",
@@ -25,6 +27,7 @@ const VIDEOS = [
         w: 774,
         h: 1678,
         frame: "phone",
+        rate: 5,
     },
 ];
 
@@ -53,6 +56,7 @@ export default function Eum() {
             if (!v) return;
             if (i === active) {
                 v.currentTime = 0;
+                v.playbackRate = VIDEOS[i].rate ?? 1.0;
                 v.play().catch(() => {});
             } else {
                 v.pause();
@@ -63,11 +67,7 @@ export default function Eum() {
     return (
         <main id="main-content" className="main main-projects main-projects-eum">
             <section className="section section-hero">
-                <div
-                    className="video-wrapper"
-                    role="group"
-                    aria-label="Eum 프로토타입 데모"
-                >
+                <div className="video-wrapper" role="group" aria-label="Eum 프로토타입 데모">
                     {VIDEOS.map((v, i) => {
                         const isActive = i === active;
                         const frameClass =
@@ -94,9 +94,7 @@ export default function Eum() {
                                 aria-hidden={!isActive}
                             >
                                 {v.frame === "monitor" ? (
-                                    <div className="monitor-frame__screen">
-                                        {videoEl}
-                                    </div>
+                                    <div className="monitor-frame__screen">{videoEl}</div>
                                 ) : (
                                     videoEl
                                 )}
@@ -117,9 +115,7 @@ export default function Eum() {
                 <div className="section-content">
                     <h2 className="hero-marquee">Eum</h2>
                     <p className="hero-headline">환자와 의사를 이음.</p>
-                    <p className="hero-violator">
-                        기록이 진료가 되고, 진료가 이해로 남는.
-                    </p>
+                    <p className="hero-violator">기록이 진료가 되고, 진료가 이해로 남는.</p>
                     <Link
                         href="/"
                         target="_blank"
