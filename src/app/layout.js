@@ -1,6 +1,7 @@
 import "./_style/style.scss";
 import Globalnav from "./_components/globalnav";
 import Globalfooter from "./_components/globalfooter";
+import { R2_ORIGIN } from "@/_lib/media";
 
 export const metadata = {
     title: "parkseik",
@@ -42,6 +43,10 @@ export const viewport = {
 export default function RootLayout({ children }) {
     return (
         <html lang="ko">
+            <head>
+                <link rel="preconnect" href={R2_ORIGIN} crossOrigin="" />
+                <link rel="dns-prefetch" href={R2_ORIGIN} />
+            </head>
             <body>
                 <a href="#main-content" className="skip-to-content">
                     본문 바로가기
