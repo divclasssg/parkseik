@@ -112,4 +112,170 @@
             }
         }
     }
+
+    // ─────────────────────────────────────────────
+    // Keyscreen — 스크롤 스크럽: sticky 트랙 안에 row 페어 (callout+asset)
+    // 각 row의 좌우 위치는 데이터(`reverse`)로 정적 결정 — swap 토글 없음
+    // 패턴: docs/scroll-scrub-pattern.md (v0.3.16에서 구현, row 페어 구조로 재설계)
+    // ─────────────────────────────────────────────
+    .section-keyscreen {
+        .keyscreen-scroll-container {
+            position: relative;
+            // ITEM_COUNT(3) × 1600vh 기준 4800vh에서, 마지막 #03 EXIT 분량(~360vh) 차감
+            // → #03이 viewport 정중앙에 도달한 채 sticky 자연 해제되며 페이지 끝과 매끄럽게 연결
+            height: 4400vh;
+        }
+
+        .keyscreen-sticky {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow: hidden; // 트랙이 viewport 밖으로 슬라이드되니 잘려야 함
+            transition: background-color 0.4s ease;
+
+            // 02 segment 진입 시 옅은 표면 톤으로 전환 (sectionkeyscreens.js가 토글)
+            &.bg-subtle {
+                background-color: #f2f2f7;
+            }
+        }
+
+        // 트랙 — JS가 translateY 매 프레임 갱신, row들이 세로로 슬라이드
+        .keyscreen-track {
+            will-change: transform;
+        }
+
+        // 각 segment 단위 row — [callout, asset] 페어
+        .keyscreen-row {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+
+            // 데이터 reverse: true (#02) — 영상이 왼쪽, 텍스트가 오른쪽
+            &.reverse {
+                flex-direction: row-reverse;
+            }
+        }
+
+        // ─── 텍스트 callout: row 안에서 자체 transform/opacity micro-animation ───
+        .keyscreen-callout {
+            width: 300px;
+            flex-shrink: 0;
+            will-change: transform, opacity; // JS가 인라인 transform/opacity 갱신
+
+            .keyscreen-callout-header {
+                color: #86868b;
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 1;
+                padding-bottom: 4px;
+            }
+
+            .keyscreen-callout-headline {
+                color: #1d1d1f;
+                font-size: 28px;
+                font-weight: 700;
+                line-height: 1.2;
+                padding-bottom: 4px;
+            }
+
+            .keyscreen-callout-copy {
+                color: #66666f;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 1.2;
+            }
+        }
+
+        // emphasize() 키워드 강조 — em 기본 italic 제거
+        .emphasis {
+            font-style: normal;
+            font-weight: inherit;
+        }
+
+        // ─── 영상 영역: row 안에서 정중앙(또는 wide는 상단) 정렬 ───
+        .keyscreen-asset {
+            height: 100vh;
+            width: calc(100vh * 9 / 16);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            > div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 85vh;
+            }
+
+            video,
+            img {
+                width: auto;
+                height: 85vh;
+                object-fit: contain;
+                border-radius: 12px;
+                display: block;
+            }
+
+            // wide(#02): full-width 스크린 호흡용 상단 padding
+            &.keyscreen-asset-wide {
+                align-items: flex-start;
+                padding-top: 128px;
+            }
+        }
+
+        // ─── 모바일: 트랙 슬라이드 무효화, row 세로 stack, reverse 무력화 ───
+        @media (max-width: 640px) {
+            .keyscreen-scroll-container {
+                height: auto;
+            }
+
+            .keyscreen-sticky {
+                position: static;
+                height: auto;
+                overflow: visible;
+            }
+
+            .keyscreen-track {
+                transform: none !important;
+            }
+
+            .keyscreen-row {
+                height: auto;
+                flex-direction: column !important; // reverse 포함 무력화
+                gap: 24px;
+                padding: 32px 0;
+            }
+
+            .keyscreen-callout {
+                width: 100%;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+            .keyscreen-asset {
+                width: 100%;
+                height: auto;
+                padding-top: 0 !important;
+
+                > div {
+                    height: auto;
+                }
+
+                video,
+                img {
+                    width: 100%;
+                    height: auto;
+                    max-width: 480px;
+                }
+
+                &.keyscreen-asset-wide {
+                    align-items: center;
+                    padding-top: 0;
+                }
+            }
+        }
+    }
 }

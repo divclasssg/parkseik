@@ -1,6 +1,6 @@
 # parkseik — 개발 문서
 
-현재 버전: **v0.3.14**
+현재 버전: **v0.3.16**
 
 ## 버전 목록
 
@@ -24,3 +24,9 @@
 | [v0.3.12](./changelog/v0.3.12.md) | section-hero 100svh 오버플로 수정              | 2026-05-17 |
 | [v0.3.13](./changelog/v0.3.13.md) | hero 비디오 배속 + localnav 메뉴 정렬          | 2026-05-17 |
 | [v0.3.14](./changelog/v0.3.14.md) | 클래스명 BEM 제거 + flat 대시 컨벤션 명문화    | 2026-05-17 |
+| [v0.3.15](./changelog/v0.3.15.md) | Scroll Scrub Pattern 레퍼런스 문서 포팅       | 2026-05-17 |
+| [v0.3.16](./changelog/v0.3.16.md) | /projects/eum Key Screens 섹션 구현            | 2026-05-17 |
+
+## 패턴 문서
+
+- [Scroll Scrub Animation Pattern](./scroll-scrub-pattern.md) — Apple 스타일 스크롤 연동 영상 스크럽 패턴 (portfolio repo에서 포팅, 구현 전 레퍼런스)
