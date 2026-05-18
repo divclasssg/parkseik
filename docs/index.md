@@ -1,6 +1,6 @@
 # parkseik — 개발 문서
 
-현재 버전: **v0.3.18**
+현재 버전: **v0.3.19**
 
 ## 버전 목록
 
@@ -28,6 +28,7 @@
 | [v0.3.16](./changelog/v0.3.16.md) | /projects/eum Key Screens 섹션 구현            | 2026-05-17 |
 | [v0.3.17](./changelog/v0.3.17.md) | .section-headline p 반응형 폭 보완            | 2026-05-17 |
 | [v0.3.18](./changelog/v0.3.18.md) | 패키지 동기화 및 subnav 높이 차이 원인 분석   | 2026-05-18 |
+| [v0.3.19](./changelog/v0.3.19.md) | /projects/eum Develop 섹션 추가 및 공통 스타일 확장 | 2026-05-18 |
 
 ## 패턴 문서
 

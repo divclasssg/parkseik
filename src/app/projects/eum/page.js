@@ -170,7 +170,7 @@ export default function Eum() {
                 </div>
             </section>
             <SectionKeyScreens />
-            <section id="overview" className="section section-projects-overview">
+            <section id="overview" className="section section-standalone section-projects-overview">
                 <div className="section-content">
                     <div className="section-eyebrow-wrapper">
                         <h2 className="section-eyebrow">Project Overview</h2>
@@ -189,7 +189,10 @@ export default function Eum() {
                     </div>
                 </div>
             </section>
-            <section id="background" className="section section-projects-background">
+            <section
+                id="background"
+                className="section section-standalone section-projects-background"
+            >
                 <div className="section-content">
                     <div className="section-eyebrow-wrapper">
                         <h2 className="section-eyebrow-emphasize-strong">Background</h2>
@@ -440,6 +443,211 @@ export default function Eum() {
                                 </p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+            {/* define-methodology-scroll-container */}
+            <section className="section section-dd-develop">
+                <div className="section-content">
+                    <div className="section-eyebrow-wrapper">
+                        <h2 className="section-eyebrow-emphasize-medium">
+                            03. Develop &middot; 판단과 이해를 이음.
+                        </h2>
+                    </div>
+                    <div className="section-headline">
+                        <p className="headline-regular">
+                            기능을 줄이고,
+                            <br />
+                            환자 기록 &rarr; 의사 판단 &rarr; 환자 이해로
+                            <br />
+                            이어지는 최소 구조만.
+                        </p>
+                    </div>
+                    <p>
+                        기능 수가 아니라 핵심 루프가 기준이었습니다. 기록이 진료로 연결되고, 판단이
+                        환자 이해로 이어지는 흐름만 남겼습니다.
+                    </p>
+                    <div className="ai-workflow">
+                        <dl>
+                            <dt>AI 워크플로우</dt>
+                            <dd>
+                                AI로 흩어진 인사이트를 묶고 비교해, 가장 먼저 풀 문제를
+                                정의했습니다.
+                            </dd>
+                        </dl>
+                    </div>
+                    <div className="button-wrapper">
+                        <Link
+                            href="/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="button-primary"
+                        >
+                            원문 데이터 보기 &#xE001;
+                        </Link>
+                    </div>
+                </div>
+                <div className="card-content">
+                    <h3 className="visuallyhidden">Develop 방법론</h3>
+                    <div className="card-grid-wrapper">
+                        <div className="card-column-3">
+                            <div className="card">
+                                <div className="card-body">
+                                    <h4 className="eyebrow">브레인스토밍.</h4>
+                                    <p>
+                                        가능한 기능을 먼저 넓게 펼쳤습니다. 처음부터 답을 좁히면
+                                        핵심 가치보다 개별 기능에 끌릴 위험이 커서, 환자와 의사
+                                        양쪽의 아이디어를 폭넓게 수집했습니다.
+                                    </p>
+                                </div>
+                                <div className="card-image">
+                                    <picture></picture>
+                                </div>
+                            </div>
+                            <div className="card">
+                                <div className="card-body">
+                                    <h4 className="eyebrow">MoSCoW.</h4>
+                                    <p>
+                                        핵심 루프에 필요한 기능만 다시 좁혔습니다. 모든 기능을 같은
+                                        무게로 두지 않고, 준비 -- 연결 -- 판단 -- 이해 흐름을 직접
+                                        만드는 기능을 우선순위 기준으로 걸러냈습니다.
+                                    </p>
+                                </div>
+                                <div className="card-image">
+                                    <picture></picture>
+                                </div>
+                            </div>
+                            <div className="card">
+                                <div className="card-body">
+                                    <h4 className="eyebrow">최종 MVP 요약.</h4>
+                                    <p>
+                                        끝가지 남길 최소 범위를 확정했습니다. 우선순위 결과를 다시
+                                        정리해, 판단과 이해를 잇는 핵심 루프만 MVP에 남기고 나머지는
+                                        보류하거나 확장 범위로 분리했습니다.
+                                    </p>
+                                </div>
+                                <div className="card-image">
+                                    <picture></picture>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="section section-standalone section-dd-develop-mvp">
+                <div className="section-content">
+                    <div className="section-eyebrow-wrapper">
+                        <h2 className="visuallyhidden">03. Develop</h2>
+                        <h3 className="section-eyebrow">MVP &middot; Minimum Viable Product</h3>
+                    </div>
+                    <div className="section-headline">
+                        <p className="headline-large-emphasize">
+                            AI로 환자는 증상을 쉽게 기록하고,
+                            <br />
+                            의사는 핵심 정보를 빠르게 파악하며,
+                            <br />
+                            진료 결과는 환자가 이해하고 치료 계획으로
+                            <br />
+                            이어지게 하는 최소 진료 연결 서비스.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section className="section section-dd-develop-review">
+                <div className="section-content">
+                    <div className="section-eyebrow-wrapper">
+                        <h2 className="visuallyhidden">03. Develop</h2>
+                        <h3 className="section-eyebrow">검토 기준 &middot; 규제와 원칙 먼저.</h3>
+                    </div>
+                    <div className="section-headline">
+                        <p className="headline-regular">
+                            의료는 작은 오해도 위험할 수 있고
+                            <br />법 &middot; 규제가 AI 역할과 환자 데이터 처리를 제한하므로,
+                            <br />
+                            화면보다 AI의 역할 범위 &middot; 의사 판단의 정보 위계 &middot; 환자
+                            설명 원칙을 먼저 검토.
+                        </p>
+                    </div>
+                    <p>
+                        화면 설계에 들어가기 전, 관련 법과 규제가 AI의 역할 범위와 환자 데이터 처리
+                        방식에 어떤 제약을 두는지, 의료 데이터 하이어라키가 짧은 진료 안에서 의사가
+                        무엇부터 빠르게 확인해야 하는지를 어떻게 구조화하는지, 의료 UX writing
+                        원칙이 환자 설명과 건강 문해력 측면에서 어떤 기준을 요구하는지를 먼저 검토한
+                        뒤, 이를 바탕으로 와이어프레임과 프로토타입의 정보 구조와 문구 체계를
+                        설계했습니다.
+                    </p>
+                    <div className="ai-workflow">
+                        <dl>
+                            <dt>AI 워크플로우</dt>
+                            <dd>
+                                법 &middot; 규제, 데이터 위계, 설명 원칙을 먼저 검토해 AI의 역할
+                                범위와 단계적 구조를 확정한 뒤, 그 위에 화면 설계를 올렸습니다.
+                            </dd>
+                        </dl>
+                    </div>
+                    <div className="card-callout-wrapper">
+                        <h4 className="visuallyhidden">중점적으로 검토한 3가지</h4>
+                        <div className="card-column-3">
+                            <div className="card-callout card-callout-white">
+                                <h5 className="eyebrow">관련 법과 규제 검토.</h5>
+                                <p>
+                                    AI는 진단이 아니라 참고 정보 범위로 제한해야 했고, 민감한
+                                    건강정보와 국외 이전에는 별도 동의가 필요했으며, 의사용 화면에는
+                                    비닫힘 경고와 검토 책임 고지가 계속 노출되어야 했습니다.
+                                </p>
+                            </div>
+                            <div className="card-callout card-callout-white">
+                                <h5 className="eyebrow">의료 데이터 하이어라키 검토.</h5>
+                                <p>
+                                    의사용 패널은 좁은 플로팅 구조 안에서 핵심 판단 정보를 먼저
+                                    보여줘야 했기 때문에, 알레르기 &middot; 주호소 &middot; 위험
+                                    신호를 우선 배치하고 나머지 데이터는 단계적으로 확인할 수 있는
+                                    구조로 정리했습니다.
+                                </p>
+                            </div>
+                            <div className="card-callout card-callout-white">
+                                <h5 className="eyebrow">의료 UX writing 원칙 검토.</h5>
+                                <p>
+                                    환자용 문구는 의학적으로 정확해야 할 뿐 아니라, 건강 문해력을
+                                    고려해 쉬운 말을 먼저 쓰고 필요한 경우에만 의학용어를 병기해야
+                                    했으며, AI가 풀어쓴 내용이라는 점도 명확히 드러나야 했습니다.
+                                    의사용 화면 역시 320-360px 안에서 빠르게 읽을 수 있도록 간결한
+                                    텍스트 기준이 필요했습니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="section section-dd-develop-wireframe-to-prototype section-half-padding">
+                <div className="section-content">
+                    <div className="section-eyebrow-wrapper">
+                        <h2 className="visuallyhidden">03. Develop</h2>
+                        <h3 className="section-eyebrow">
+                            Wireframe &rarr; prototype &middot; 프로토타입까지 이음.
+                        </h3>
+                    </div>
+                    <div className="section-headline">
+                        <p className="headline-regular">
+                            손스케치로 구조를 잡고,
+                            <br />
+                            바이브 코딩으로
+                            <br />
+                            실제 AI가 작동하는 프로토타입까지.
+                        </p>
+                    </div>
+                    <p>
+                        손스케치와 로우파이로 구조를 잡은 뒤, 바이브 코딩으로 실제 AI가 연결된
+                        프로토타입까지 만들었습니다.
+                    </p>
+                    <div className="ai-workflow">
+                        <dl>
+                            <dt>AI 워크플로우</dt>
+                            <dd>
+                                바이브 코딩과 실제 AI 연결로 핵심 화면을 작동하는 프로토타입으로
+                                구현했습니다.
+                            </dd>
+                        </dl>
                     </div>
                 </div>
             </section>

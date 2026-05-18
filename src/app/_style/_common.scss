@@ -165,7 +165,7 @@ h6 {
         max-width: 680px;
         font-size: 18px;
         font-weight: 400;
-        line-height: 1.2em;
+        line-height: 1.3em;
         padding-bottom: 12px;
 
         &:last-of-type {
@@ -193,7 +193,7 @@ h6 {
             padding-bottom: 24px;
 
             &-emphasize {
-                background: linear-gradient(90deg, #111827 0%, #0071e3 70%);
+                background: linear-gradient(90deg, #0071e3 0%, #111827 70%);
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
@@ -235,6 +235,35 @@ h6 {
     }
 
     .button {
+        &-primary {
+            border-radius: 8px;
+            background: #1d1d1f;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 36px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1em;
+            color: #fff;
+            padding: 0 16px;
+        }
+
+        &-secondary {
+            border-radius: 8px;
+            border: 1px solid #1d1d1f;
+            background: transparent;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 36px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1em;
+            color: #1d1d1f;
+            padding: 0 16px;
+        }
+
         &-tertiary {
             display: inline-flex;
             height: 36px;
