@@ -1,6 +1,6 @@
 # parkseik — 개발 문서
 
-현재 버전: **v0.3.28**
+현재 버전: **v0.3.29**
 
 ## 버전 목록
 
@@ -38,6 +38,7 @@
 | [v0.3.26](./changelog/v0.3.26.md) | /projects/eum 히어로 animated WebP를 lossless로 재인코딩 | 2026-05-18 |
 | [v0.3.27](./changelog/v0.3.27.md) | /projects/eum 히어로를 mp4 video 자동재생으로 회귀 | 2026-05-18 |
 | [v0.3.28](./changelog/v0.3.28.md) | /projects/eum 히어로 작업 잉여 R2 자산 정리 | 2026-05-18 |
+| [v0.3.29](./changelog/v0.3.29.md) | 홈·localnav·공통 버튼·card·hero typography 미세 조정 | 2026-05-18 |
 
 ## 패턴 문서
 

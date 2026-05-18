@@ -5,7 +5,9 @@ export default function Home() {
         <main id="main-content" className="main main-home">
             <header className="header-home">
                 <h2 className="header-home-headline">
-                    <span>세익 -- 世益 &middot; [ se.ik ], Product Designer</span>
+                    <span>
+                        세익 -- 世益 &middot; [ se.ik ], <strong>Product Designer</strong>
+                    </span>
                     Better experiences, for a better world.
                 </h2>
             </header>

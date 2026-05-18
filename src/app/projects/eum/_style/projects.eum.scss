@@ -1,14 +1,15 @@
 .main-projects-eum {
     .section-hero {
         .hero-headline {
-            background: linear-gradient(90deg, #0071e3 0%, #111827 70%);
+            background: linear-gradient(90deg, #0071e3 0%, #111827 40%);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            display: inline-flex;
         }
 
         .button-elevated {
-            background: linear-gradient(90deg, #0071e3 0%, #111827 50%);
+            background: linear-gradient(134deg, #0071e3 0%, #111827 70%);
         }
 
         // 3개 프레임을 같은 자리에 레이어처럼 쌓고 활성 프레임만 노출.
@@ -184,7 +185,7 @@
                     Arial,
                     sans-serif;
                 color: #1d1d1f;
-                font-size: 28px;
+                font-size: 24px;
                 font-weight: 700;
                 line-height: 1.2;
                 padding-bottom: 4px;
