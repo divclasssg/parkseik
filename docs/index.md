@@ -1,6 +1,6 @@
 # parkseik — 개발 문서
 
-현재 버전: **v0.3.17**
+현재 버전: **v0.3.18**
 
 ## 버전 목록
 
@@ -27,6 +27,7 @@
 | [v0.3.15](./changelog/v0.3.15.md) | Scroll Scrub Pattern 레퍼런스 문서 포팅       | 2026-05-17 |
 | [v0.3.16](./changelog/v0.3.16.md) | /projects/eum Key Screens 섹션 구현            | 2026-05-17 |
 | [v0.3.17](./changelog/v0.3.17.md) | .section-headline p 반응형 폭 보완            | 2026-05-17 |
+| [v0.3.18](./changelog/v0.3.18.md) | 패키지 동기화 및 subnav 높이 차이 원인 분석   | 2026-05-18 |
 
 ## 패턴 문서
 

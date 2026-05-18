@@ -93,6 +93,12 @@ h6 {
 }
 
 .section {
+    padding: 96px 0;
+
+    &.section-half-padding {
+        padding: 96px 0 0;
+    }
+
     &-content {
         width: 100%; // flex item일 때 margin:auto가 stretch를 무효화하는 것 보정
         max-width: 1024px;
@@ -111,8 +117,22 @@ h6 {
             color: #66666f;
             text-transform: capitalize;
 
-            &-emphasize {
+            &-emphasize-strong {
                 background: linear-gradient(90deg, #0071e3 0%, #111827 80%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                display: inline-flex;
+                align-items: center;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 1.2em;
+                color: #66666f;
+                text-transform: capitalize;
+            }
+
+            &-emphasize-medium {
+                background: linear-gradient(90deg, #111827 0%, #0071e3 80%);
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
@@ -137,13 +157,18 @@ h6 {
             "Helvetica Neue",
             Arial,
             sans-serif;
+        font-feature-settings:
+            "ss17" on,
+            "ss18" on,
+            "tnum" on;
         width: 100%;
         max-width: 680px;
         font-size: 18px;
         font-weight: 400;
         line-height: 1.2em;
+        padding-bottom: 12px;
 
-        &:last-child {
+        &:last-of-type {
             padding-bottom: 0;
         }
     }
@@ -206,6 +231,21 @@ h6 {
             font-weight: 700;
             line-height: 1.3em;
             padding-bottom: 24px;
+        }
+    }
+
+    .button {
+        &-tertiary {
+            display: inline-flex;
+            height: 36px;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1em;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 }

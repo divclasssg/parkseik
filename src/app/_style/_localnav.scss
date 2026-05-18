@@ -1,6 +1,6 @@
 .localnav {
     position: fixed;
-    top: 0;
+    top: 16px;
     left: 0;
     width: 100%;
     font-family:
@@ -99,7 +99,6 @@
 
                         &:hover {
                             color: #1d1d1f;
-                            text-decoration: underline;
                         }
 
                         &.active {

@@ -5,7 +5,7 @@ export default function Home() {
         <main id="main-content" className="main main-home">
             <header className="header-home">
                 <h2 className="header-home-headline">
-                    <span>세익 -- 世益 · [ se.ik ]</span>
+                    <span>세익 -- 世益 &middot; [ se.ik ], Product Designer</span>
                     Better experiences, for a better world.
                 </h2>
             </header>
@@ -24,20 +24,14 @@ export default function Home() {
                             <div className="homenav-depth2">
                                 <ul className="homenav-depth2-list">
                                     <li className="homenav-depth2-item">
-                                        <Link
-                                            href="/projects"
-                                            className="homenav-depth2-link"
-                                        >
+                                        <Link href="/projects" className="homenav-depth2-link">
                                             <strong>이음,</strong>
                                             <span>공모전 출품작,</span>
                                             <span>Medical</span>
                                         </Link>
                                     </li>
                                     <li className="homenav-depth2-item">
-                                        <Link
-                                            href="/projects/eum"
-                                            className="homenav-depth2-link"
-                                        >
+                                        <Link href="/projects/eum" className="homenav-depth2-link">
                                             <strong>Eum,</strong>
                                             <span>Case Study,</span>
                                             <span>Medical</span>

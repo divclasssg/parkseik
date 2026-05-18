@@ -9,6 +9,10 @@
         Arial,
         sans-serif;
     color: #1d1d1f;
+    font-feature-settings:
+        "ss17" on,
+        "ss18" on,
+        "tnum" on;
 
     .header-home {
         padding: 64px 0 40px 64px;

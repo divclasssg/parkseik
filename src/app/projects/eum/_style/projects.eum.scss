@@ -173,6 +173,16 @@
             }
 
             .keyscreen-callout-headline {
+                font-family:
+                    "Spoqa Han Sans Neo",
+                    "SUIT",
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    Roboto,
+                    "Helvetica Neue",
+                    Arial,
+                    sans-serif;
                 color: #1d1d1f;
                 font-size: 28px;
                 font-weight: 700;
@@ -274,6 +284,32 @@
                 &.keyscreen-asset-wide {
                     align-items: center;
                     padding-top: 0;
+                }
+            }
+        }
+    }
+
+    .card-callout-wrapper {
+        .card-column-2 {
+            .card-callout {
+                .eyebrow-small {
+                    &.patient {
+                        -webkit-text-fill-color: #0000;
+                        color: #66666f;
+                        text-transform: capitalize;
+                        background: linear-gradient(90deg, #0071e3 0%, #111827 80%);
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                    }
+
+                    &.doctor {
+                        -webkit-text-fill-color: #0000;
+                        color: #66666f;
+                        text-transform: capitalize;
+                        background: linear-gradient(90deg, #111827 0%, #0071e3 80%);
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                    }
                 }
             }
         }
