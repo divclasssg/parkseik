@@ -1,6 +1,6 @@
 # parkseik — 개발 문서
 
-현재 버전: **v0.3.31**
+현재 버전: **v0.3.34**
 
 ## 버전 목록
 
@@ -41,6 +41,9 @@
 | [v0.3.29](./changelog/v0.3.29.md) | 홈·localnav·공통 버튼·card·hero typography 미세 조정 | 2026-05-18 |
 | [v0.3.30](./changelog/v0.3.30.md) | /projects/eum hero 영상 hi/lo DPR 분기 제거 (글씨 깨짐 회귀 해결) | 2026-05-18 |
 | [v0.3.31](./changelog/v0.3.31.md) | /projects/eum hero 레이아웃 재구성 (영상 표시 폭 ~1.5×) | 2026-05-18 |
+| [v0.3.32](./changelog/v0.3.32.md) | /projects/eum hero 비디오 수직 호흡 공간 추가 | 2026-05-19 |
+| [v0.3.33](./changelog/v0.3.33.md) | /projects/eum hero 텍스트–비디오 겹침: frosted glass caption 활성화 | 2026-05-19 |
+| [v0.3.34](./changelog/v0.3.34.md) | /projects/eum hero 재배치: phone 프레임 우측 이동 + frosted 제거 | 2026-05-19 |
 
 ## 패턴 문서
 

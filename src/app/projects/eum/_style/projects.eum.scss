@@ -13,13 +13,11 @@
         }
 
         // 브랜드 콜아웃을 비디오 위에 오버레이.
-        // 프레임 하단(home indicator 단색 영역) 위에 얹혀 디바이스 mockup 위 caption 패턴.
         // pointer-events: none 으로 hover/scroll 통과시키되 버튼은 별도로 활성.
         // 공통 `.section-content { width: 100%; max-width: 1024px; margin: 0 auto }` 오버라이드.
+        // frosted glass(v0.3.33)는 디바이스 잘림·시각 무게 문제로 회귀.
+        // 대신 phone 프레임을 우측으로 빼 좌·중 캡션 영역과 수평 분리(v0.3.34).
         .section-content {
-            // -webkit-backdrop-filter: saturate(180%) blur(20px);
-            // backdrop-filter: saturate(180%) blur(20px);
-            // background: rgba(255, 255, 255, 0.8);
             position: absolute;
             bottom: 0;
             left: 0;
@@ -43,20 +41,20 @@
         }
 
         // 3개 프레임을 같은 자리에 레이어처럼 쌓고 활성 프레임만 노출.
-        // hero 전체를 차지하도록 absolute fill. section-content는 별도 오버레이로 위에 얹힘.
+        // hero 안쪽에서 위·아래 48px 호흡 공간을 두고 차지. section-content는 별도 오버레이로 위에 얹힘.
         // → flex column 분할 대비 video-wrapper 높이 약 50% 증가, 프레임 표시 폭 ~1.5×
+        // 프레임은 height:100%로 줄어든 wrapper에 맞춰 자연스럽게 축소·중앙 정렬 유지
         .video-wrapper {
             position: absolute;
-            inset: 0;
+            inset: 48px 0;
             margin: 0;
 
-            // 공통: 모든 프레임 중앙 절대 배치, 페이드 전환, 기본 숨김
+            // 공통: 수직 중앙, 페이드 전환, 기본 숨김.
+            // 수평 정렬은 variant별로 정의 — phone은 우측(right: 0), monitor는 중앙(left: 50%).
             .phone-frame,
             .monitor-frame {
                 position: absolute;
                 top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
 
                 height: 100%;
                 width: auto;
@@ -75,7 +73,14 @@
             // 01·03: iPhone 17 Pro Max 프레임 (PNG 비율 1470:3000)
             // height: 100%(공통)와 max-width(variant)가 동시에 걸리면 aspect-ratio 무효 → 가로 압축.
             // 짝맞춤 max-height(= max-width × 3000/1470)로 height도 캡해야 aspect 유지.
+            // v0.3.34: phone 우측 끝을 monitor 02 우측 끝과 정렬.
+            // monitor 폭은 hero 높이에 의해 결정 ((wrapper_h - 24) × 3024/1964 + 24),
+            // wrapper_h = 100svh - 204px (globalnav 44 + localnav 64 + v0.3.32 inset 96).
+            // 따라서 monitor 우측 inset = (100vw - monitor_w) / 2.
+            // 좁은 viewport(특히 모바일)에서 음수 방지를 위해 48px min.
             .phone-frame {
+                right: max(48px, calc((100vw - ((100svh - 228px) * 3024 / 1964 + 24px)) / 2));
+                transform: translateY(-50%);
                 aspect-ratio: 1470 / 3000;
 
                 &-01 {
@@ -117,7 +122,10 @@
             // 외곽(.monitor-frame)에는 aspect-ratio를 두지 않고 안쪽 -screen에 비디오 비율을 부여
             // → content-box가 정확히 비디오 비율이라 cover/letterbox 모두 0
             // 외곽 max-width: 100%로 풀어 wrapper 높이를 최대로 채움
+            // v0.3.34: monitor는 phone과 달리 중앙 정렬 유지 (전폭 활용이 모니터 mockup 의도).
             .monitor-frame {
+                left: 50%;
+                transform: translate(-50%, -50%);
                 max-width: 100%;
                 padding: 12px;
                 background: #1d1d1f;
