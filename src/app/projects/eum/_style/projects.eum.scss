@@ -12,14 +12,43 @@
             background: linear-gradient(134deg, #0071e3 0%, #111827 70%);
         }
 
+        // 브랜드 콜아웃을 비디오 위에 오버레이.
+        // 프레임 하단(home indicator 단색 영역) 위에 얹혀 디바이스 mockup 위 caption 패턴.
+        // pointer-events: none 으로 hover/scroll 통과시키되 버튼은 별도로 활성.
+        // 공통 `.section-content { width: 100%; max-width: 1024px; margin: 0 auto }` 오버라이드.
+        .section-content {
+            // -webkit-backdrop-filter: saturate(180%) blur(20px);
+            // backdrop-filter: saturate(180%) blur(20px);
+            // background: rgba(255, 255, 255, 0.8);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0;
+            width: auto;
+            max-width: none;
+            z-index: 2;
+            padding: 48px 0;
+            pointer-events: none;
+
+            .hero-body {
+                width: 100%;
+                max-width: 1024px;
+                margin: 0 auto;
+                a,
+                button {
+                    pointer-events: auto;
+                }
+            }
+        }
+
         // 3개 프레임을 같은 자리에 레이어처럼 쌓고 활성 프레임만 노출.
-        // 높이는 100svh에서 글로벌/로컬 nav + section-content 공간 확보용으로 180px 차감.
+        // hero 전체를 차지하도록 absolute fill. section-content는 별도 오버레이로 위에 얹힘.
+        // → flex column 분할 대비 video-wrapper 높이 약 50% 증가, 프레임 표시 폭 ~1.5×
         .video-wrapper {
-            position: relative;
-            width: 100%;
-            flex: 1 1 auto; // hero 안에 남는 vertical 공간 자동 차지
-            min-height: 0; // flex column 안에서 콘텐츠가 wrapper보다 커도 축소 허용
-            margin: 0 auto 32px; // section-content와 시각적 간격
+            position: absolute;
+            inset: 0;
+            margin: 0;
 
             // 공통: 모든 프레임 중앙 절대 배치, 페이드 전환, 기본 숨김
             .phone-frame,
@@ -44,14 +73,18 @@
             }
 
             // 01·03: iPhone 17 Pro Max 프레임 (PNG 비율 1470:3000)
+            // height: 100%(공통)와 max-width(variant)가 동시에 걸리면 aspect-ratio 무효 → 가로 압축.
+            // 짝맞춤 max-height(= max-width × 3000/1470)로 height도 캡해야 aspect 유지.
             .phone-frame {
                 aspect-ratio: 1470 / 3000;
 
                 &-01 {
                     max-width: 735px;
+                    max-height: 1500px;
                 } // 안쪽 비디오 660 CSS px (레티나 2x 보장)
                 &-03 {
                     max-width: 431px;
+                    max-height: 880px;
                 } // 안쪽 비디오 387 CSS px (레티나 2x 보장)
 
                 // <video>는 replaced element라 inset+width:auto만으로는 stretch되지 않음.

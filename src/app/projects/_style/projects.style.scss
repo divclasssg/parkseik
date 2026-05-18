@@ -13,10 +13,9 @@
     font-size: 18px;
 
     .section-hero {
+        position: relative; // section-content 오버레이 기준
         height: calc(100svh - 44px - 64px); // globalnav(44) + localnav(64)
-        padding: 64px 0 96px;
-        display: flex;
-        flex-direction: column;
+        padding: 0; // .section 기본값 96px 0 무효화 (video-wrapper가 hero 전체 fill)
 
         .hero-marquee {
             font-family:
