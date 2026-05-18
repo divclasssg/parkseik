@@ -5,30 +5,33 @@ import Link from "next/link";
 import { asset } from "@/_lib/media";
 import SectionKeyScreens from "./_components/sectionkeyscreens";
 
+// Hero를 mp4 video element 자동재생으로 회귀(v0.3.27).
+// v0.3.22~v0.3.26 webp/step-jump 시도 후 디자인 의도(자동재생 motion)를 우선해
+// v0.3.21 패턴으로 복원. hi/lo + DPR 분기로 외장 1080p에서는 소스÷2 1:1 매핑.
 const VIDEOS = [
     {
         key: "01",
         src: "eum/videos/hero/final_prototype_01.mp4",
+        srcLo: "eum/videos/hero/final_prototype_01_lo.mp4",
         w: 1320,
         h: 2868,
         frame: "phone",
-        rate: 10,
     },
     {
         key: "02",
         src: "eum/videos/hero/final_prototype_02.mp4",
+        srcLo: "eum/videos/hero/final_prototype_02_lo.mp4",
         w: 3024,
         h: 1964,
         frame: "monitor",
-        rate: 10,
     },
     {
         key: "03",
         src: "eum/videos/hero/final_prototype_03.mp4",
+        srcLo: "eum/videos/hero/final_prototype_03_lo.mp4",
         w: 774,
         h: 1678,
         frame: "phone",
-        rate: 5,
     },
 ];
 
@@ -38,6 +41,13 @@ export default function Eum() {
     const ref2 = useRef(null);
     const refs = [ref0, ref1, ref2];
     const [active, setActive] = useState(0);
+    // DPR 감지: 외장 1080p(DPR 1) 같은 저밀도 디스플레이에서는 lo 영상 사용.
+    // null = 미결정(SSR/첫 paint), 마운트 후 hi/lo 결정되어 한 벌만 다운로드됨.
+    const [useHi, setUseHi] = useState(null);
+
+    useEffect(() => {
+        setUseHi(window.devicePixelRatio >= 1.5);
+    }, []);
 
     useEffect(() => {
         const total = refs.length;
@@ -52,18 +62,18 @@ export default function Eum() {
     }, []);
 
     useEffect(() => {
+        if (useHi === null) return;
         refs.forEach((ref, i) => {
             const v = ref.current;
             if (!v) return;
             if (i === active) {
                 v.currentTime = 0;
-                v.playbackRate = VIDEOS[i].rate ?? 1.0;
                 v.play().catch(() => {});
             } else {
                 v.pause();
             }
         });
-    }, [active]);
+    }, [active, useHi]);
 
     return (
         <main id="main-content" className="main main-projects main-projects-eum">
@@ -75,16 +85,18 @@ export default function Eum() {
                             v.frame === "phone"
                                 ? `phone-frame phone-frame-${v.key}`
                                 : `monitor-frame monitor-frame-${v.key}`;
+                        const resolvedSrc =
+                            useHi === null ? undefined : asset(useHi ? v.src : v.srcLo);
                         const videoEl = (
                             <video
                                 ref={refs[i]}
                                 className={`video-item video-item-${v.key}`}
-                                src={asset(v.src)}
+                                src={resolvedSrc}
                                 width={v.w}
                                 height={v.h}
                                 muted
                                 playsInline
-                                preload="metadata"
+                                preload="auto"
                                 aria-label={`Eum 프로토타입 데모 ${i + 1}`}
                             />
                         );
@@ -97,17 +109,17 @@ export default function Eum() {
                                 {v.frame === "monitor" ? (
                                     <div className="monitor-frame-screen">{videoEl}</div>
                                 ) : (
-                                    videoEl
-                                )}
-                                {v.frame === "phone" && (
-                                    <img
-                                        className="phone-frame-bezel"
-                                        src="/images/iPhone 17 Pro Max - Deep Blue - Portrait.png"
-                                        alt=""
-                                        aria-hidden="true"
-                                        width={1470}
-                                        height={3000}
-                                    />
+                                    <>
+                                        {videoEl}
+                                        <img
+                                            className="phone-frame-bezel"
+                                            src="/images/iPhone 17 Pro Max - Deep Blue - Portrait.png"
+                                            alt=""
+                                            aria-hidden="true"
+                                            width={1470}
+                                            height={3000}
+                                        />
+                                    </>
                                 )}
                             </div>
                         );

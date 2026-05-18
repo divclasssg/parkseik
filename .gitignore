@@ -42,3 +42,9 @@ next-env.d.ts
 
 # claude code local settings
 .claude/settings.local.json
+
+# wrangler local cache (Cloudflare R2 dev/state)
+.wrangler/
+
+# R2-synced portfolio assets (CDN-served, not source-of-truth here)
+/portfolio/

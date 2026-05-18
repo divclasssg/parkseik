@@ -1,6 +1,6 @@
 # parkseik — 개발 문서
 
-현재 버전: **v0.3.19**
+현재 버전: **v0.3.28**
 
 ## 버전 목록
 
@@ -29,6 +29,15 @@
 | [v0.3.17](./changelog/v0.3.17.md) | .section-headline p 반응형 폭 보완            | 2026-05-17 |
 | [v0.3.18](./changelog/v0.3.18.md) | 패키지 동기화 및 subnav 높이 차이 원인 분석   | 2026-05-18 |
 | [v0.3.19](./changelog/v0.3.19.md) | /projects/eum Develop 섹션 추가 및 공통 스타일 확장 | 2026-05-18 |
+| [v0.3.20](./changelog/v0.3.20.md) | /projects/eum 히어로 영상 화질 회복 (사전 배속 인코딩) | 2026-05-18 |
+| [v0.3.21](./changelog/v0.3.21.md) | /projects/eum 히어로 영상 외장 1080p(DPR=1) 깨짐 해결 | 2026-05-18 |
+| [v0.3.22](./changelog/v0.3.22.md) | /projects/eum 히어로 영상 step-jump 모드 전환 | 2026-05-18 |
+| [v0.3.23](./changelog/v0.3.23.md) | /projects/eum 히어로를 video → image slideshow 전환 | 2026-05-18 |
+| [v0.3.24](./changelog/v0.3.24.md) | /projects/eum 히어로를 animated WebP 자동재생으로 전환 | 2026-05-18 |
+| [v0.3.25](./changelog/v0.3.25.md) | /projects/eum 히어로 animated WebP 화질 추가 향상 | 2026-05-18 |
+| [v0.3.26](./changelog/v0.3.26.md) | /projects/eum 히어로 animated WebP를 lossless로 재인코딩 | 2026-05-18 |
+| [v0.3.27](./changelog/v0.3.27.md) | /projects/eum 히어로를 mp4 video 자동재생으로 회귀 | 2026-05-18 |
+| [v0.3.28](./changelog/v0.3.28.md) | /projects/eum 히어로 작업 잉여 R2 자산 정리 | 2026-05-18 |
 
 ## 패턴 문서
 
