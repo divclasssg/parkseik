@@ -17,6 +17,7 @@
         // 공통 `.section-content { width: 100%; max-width: 1024px; margin: 0 auto }` 오버라이드.
         // frosted glass(v0.3.33)는 디바이스 잘림·시각 무게 문제로 회귀.
         // 대신 phone 프레임을 우측으로 빼 좌·중 캡션 영역과 수평 분리(v0.3.34).
+        // v0.3.36: monitor 영상 겹침 완화 — 위는 투명, 아래는 흰 배경으로 fade.
         .section-content {
             position: absolute;
             bottom: 0;
@@ -33,6 +34,7 @@
                 width: 100%;
                 max-width: 1024px;
                 margin: 0 auto;
+
                 a,
                 button {
                     pointer-events: auto;
@@ -47,7 +49,8 @@
         .video-wrapper {
             position: absolute;
             inset: 48px 0;
-            margin: 0;
+            margin: 0 auto;
+            max-width: 1200px;
 
             // 공통: 수직 중앙, 페이드 전환, 기본 숨김.
             // 수평 정렬은 variant별로 정의 — phone은 우측(right: 0), monitor는 중앙(left: 50%).
@@ -74,12 +77,9 @@
             // height: 100%(공통)와 max-width(variant)가 동시에 걸리면 aspect-ratio 무효 → 가로 압축.
             // 짝맞춤 max-height(= max-width × 3000/1470)로 height도 캡해야 aspect 유지.
             // v0.3.34: phone 우측 끝을 monitor 02 우측 끝과 정렬.
-            // monitor 폭은 hero 높이에 의해 결정 ((wrapper_h - 24) × 3024/1964 + 24),
-            // wrapper_h = 100svh - 204px (globalnav 44 + localnav 64 + v0.3.32 inset 96).
-            // 따라서 monitor 우측 inset = (100vw - monitor_w) / 2.
-            // 좁은 viewport(특히 모바일)에서 음수 방지를 위해 48px min.
+            // v0.3.37: wrapper max-width 도입 후 monitor 우측 계산식이 무효화됨. right: 0으로 단순화.
             .phone-frame {
-                right: max(48px, calc((100vw - ((100svh - 228px) * 3024 / 1964 + 24px)) / 2));
+                right: 0;
                 transform: translateY(-50%);
                 aspect-ratio: 1470 / 3000;
 
@@ -119,22 +119,25 @@
             }
 
             // 02: CSS 미니멀 모니터 베젤.
-            // 외곽(.monitor-frame)에는 aspect-ratio를 두지 않고 안쪽 -screen에 비디오 비율을 부여
-            // → content-box가 정확히 비디오 비율이라 cover/letterbox 모두 0
-            // 외곽 max-width: 100%로 풀어 wrapper 높이를 최대로 채움
+            // v0.3.35: video-wrapper max-width: 1200px 도입으로 width-driven 전환.
+            // 이전엔 height: 100%(wrapper)→ aspect-ratio→ width 순 height-driven이었으나,
+            // wrapper가 1200px로 캡되면 screen 자연 너비가 frame content를 초과해 넘쳐남.
+            // 따라서 frame width: 100%(wrapper) → screen width: 100% → aspect-ratio로 height 결정.
             // v0.3.34: monitor는 phone과 달리 중앙 정렬 유지 (전폭 활용이 모니터 mockup 의도).
             .monitor-frame {
                 left: 50%;
                 transform: translate(-50%, -50%);
+                width: 100%;
                 max-width: 100%;
+                height: auto; // 공통 height: 100% 오버라이드 — screen content가 높이 결정
                 padding: 12px;
                 background: #1d1d1f;
                 border-radius: 16px;
                 box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 
                 .monitor-frame-screen {
-                    height: 100%;
-                    max-height: 100%;
+                    width: 100%;
+                    height: auto; // aspect-ratio + width → 높이 결정
                     max-width: 1512px; // 레티나 보장: 비디오 소스 3024 ÷ 2
                     aspect-ratio: 3024 / 1964;
                     background: #000;

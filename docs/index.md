@@ -1,6 +1,6 @@
 # parkseik — 개발 문서
 
-현재 버전: **v0.3.34**
+현재 버전: **v0.3.37**
 
 ## 버전 목록
 
@@ -44,6 +44,9 @@
 | [v0.3.32](./changelog/v0.3.32.md) | /projects/eum hero 비디오 수직 호흡 공간 추가 | 2026-05-19 |
 | [v0.3.33](./changelog/v0.3.33.md) | /projects/eum hero 텍스트–비디오 겹침: frosted glass caption 활성화 | 2026-05-19 |
 | [v0.3.34](./changelog/v0.3.34.md) | /projects/eum hero 재배치: phone 프레임 우측 이동 + frosted 제거 | 2026-05-19 |
+| [v0.3.35](./changelog/v0.3.35.md) | /projects/eum hero video-wrapper max-width 1200px | 2026-05-19 |
+| [v0.3.36](./changelog/v0.3.36.md) | /projects/eum hero 텍스트 영역 그라데이션 스크림 | 2026-05-19 |
+| [v0.3.37](./changelog/v0.3.37.md) | /projects/eum hero phone 프레임 우측 flush | 2026-05-19 |
 
 ## 패턴 문서
 

@@ -652,6 +652,18 @@ export default function Eum() {
                         </dl>
                     </div>
                 </div>
+                <div className="carousel-slider">
+                    <div className="slider-wrapper">
+                        <div className="slider-item">
+                            <div className="slider-content">
+                                <h4 className="slider-eyebrow"></h4>
+                                <h5 className="slider-headline"></h5>
+                                <p className="slider-subhead"></p>
+                            </div>
+                            <div className="slider-image"></div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
     );
