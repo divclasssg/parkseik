@@ -1,6 +1,6 @@
 # parkseik — 개발 문서
 
-현재 버전: **v0.3.38**
+현재 버전: **v0.3.39**
 
 ## 버전 목록
 
@@ -48,6 +48,7 @@
 | [v0.3.36](./changelog/v0.3.36.md) | /projects/eum hero 텍스트 영역 그라데이션 스크림 | 2026-05-19 |
 | [v0.3.37](./changelog/v0.3.37.md) | /projects/eum hero phone 프레임 우측 flush | 2026-05-19 |
 | [v0.3.38](./changelog/v0.3.38.md) | /projects/eum hero 영상 visibility 기반 재생 제어 | 2026-05-19 |
+| [v0.3.39](./changelog/v0.3.39.md) | /projects/eum 카드 마크업 구조 재설계 | 2026-05-19 |
 
 ## 패턴 문서
 

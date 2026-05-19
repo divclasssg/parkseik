@@ -228,14 +228,32 @@
         }
     }
 
-    .card-content {
+    .card-group {
         padding-bottom: 64px;
 
         &:last-of-type {
             padding-bottom: 0;
         }
 
-        .card-eyebrow {
+        &.col-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            padding-bottom: 0;
+        }
+
+        &.col-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            width: 100%;
+            max-width: 1096px;
+            margin: 0 auto;
+            padding-top: 24px;
+            padding-bottom: 0;
+        }
+
+        .card-group-label {
             width: 100%;
             max-width: 1024px;
             font-size: 18px;
@@ -247,246 +265,157 @@
             padding-bottom: 16px;
         }
 
-        .card-wrapper {
-            > div {
-                margin: 0 auto;
+        .card {
+            border-radius: 24px;
+            background: #f2f2f7;
+            padding: 32px;
 
-                &:last-child {
-                    margin-bottom: 0;
-                }
+            &.card-white {
+                background: #fff;
             }
 
-            .card-set-full-bleed {
-                border-radius: 24px;
-                background: #f2f2f7;
+            &.card-bleed {
                 display: flex;
                 gap: 64px;
                 width: 100%;
                 max-width: 1096px;
                 padding: 36px 0 0 36px;
-                margin-bottom: 24px;
+                margin: 0 auto 24px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
 
                 &:nth-child(even) {
                     flex-direction: row-reverse;
                     padding: 48px 48px 0 0;
                 }
+            }
 
-                .content-body {
-                    width: 100%;
-                    max-width: 360px;
+            &.card-tile {
+                display: flex;
+                flex-direction: column-reverse;
+                gap: 24px;
+                align-self: start;
+                background: none;
+                padding: 0;
+            }
 
-                    .eyebrow {
-                        font-size: 16px;
-                        font-weight: 500;
-                        line-height: 1em;
-                        color: #66666f;
-                        padding-bottom: 12px;
-                    }
-
-                    .headline {
-                        font-family:
-                            "Spoqa Han Sans Neo",
-                            "SUIT",
-                            -apple-system,
-                            BlinkMacSystemFont,
-                            "Segoe UI",
-                            Roboto,
-                            "Helvetica Neue",
-                            Arial,
-                            sans-serif;
-                        font-size: 20px;
-                        font-weight: 700;
-                        line-height: 1.3em;
-                        text-transform: capitalize;
-                        color: #1d1d1f;
-                        padding-bottom: 24px;
-                    }
-
-                    .tags {
-                        padding: 36px 0 48px;
-
-                        ul {
-                            display: flex;
-                            gap: 8px;
-
-                            li {
-                                border-radius: 24px;
-                                background: #fff;
-                                display: flex;
-                                height: 36px;
-                                padding: 0 12px;
-                                justify-content: center;
-                                align-items: center;
-                                font-size: 14px;
-                                font-style: normal;
-                                font-weight: 500;
-                                line-height: 1em;
-                            }
-                        }
-                    }
-
-                    .button-wrapper {
-                        padding-bottom: 36px;
-                    }
+            .card-body {
+                .eyebrow {
+                    display: inline-flex;
+                    font-size: 18px;
+                    font-weight: 700;
+                    line-height: 1.2em;
+                    padding-bottom: 24px;
                 }
 
-                .content-image {
-                    position: relative;
+                .eyebrow-small {
+                    display: inline-flex;
+                    font-size: 14px;
+                    font-weight: 700;
+                    line-height: 1.2em;
+                    padding-bottom: 24px;
+                }
 
-                    picture {
-                        position: absolute;
-                    }
+                .headline {
+                    font-family:
+                        "Spoqa Han Sans Neo",
+                        "SUIT",
+                        -apple-system,
+                        BlinkMacSystemFont,
+                        "Segoe UI",
+                        Roboto,
+                        "Helvetica Neue",
+                        Arial,
+                        sans-serif;
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: 1.3em;
                 }
             }
-        }
 
-        .card-grid-wrapper {
-            width: 100%;
-            max-width: 1096px;
-            margin: 0 auto;
-            padding-top: 24px;
+            &.card-bleed .card-body {
+                width: 100%;
+                max-width: 360px;
 
-            .card-column-3 {
-                display: grid;
-                display: -ms-grid;
-                display: -moz-grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 16px;
-                align-items: start;
+                .eyebrow {
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 1em;
+                    color: #66666f;
+                    padding-bottom: 12px;
+                }
 
-                .card {
-                    display: flex;
-                    flex-direction: column-reverse;
-                    gap: 24px;
+                .headline {
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: 1.3em;
+                    text-transform: capitalize;
+                    color: #1d1d1f;
+                    padding-bottom: 24px;
+                }
 
-                    .card-body {
-                        padding: 0 12px;
+                .tags {
+                    padding: 36px 0 48px;
 
-                        .eyebrow {
-                            font-size: 16px;
-                            font-weight: 700;
-                            line-height: 1.4em;
-                        }
-
-                        p {
-                            font-size: 16px;
-                            line-height: 1.4em;
-                        }
-                    }
-
-                    .card-image {
-                        border-radius: 24px;
-                        background: #f2f2f7;
+                    ul {
                         display: flex;
-                        align-self: stretch;
-                        align-items: flex-end;
-                        justify-content: flex-end;
-                        height: 512px;
-                        overflow: hidden;
+                        gap: 8px;
+
+                        li {
+                            border-radius: 24px;
+                            background: #fff;
+                            display: flex;
+                            height: 36px;
+                            padding: 0 12px;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: 1em;
+                        }
                     }
                 }
-            }
-        }
-    }
 
-    .card-callout-wrapper {
-        .card-column-2 {
-            display: grid;
-            display: -ms-grid;
-            display: -moz-grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-
-            .card-callout {
-                border-radius: 24px;
-                background: #f2f2f7;
-                padding: 32px;
-
-                &.card-callout-white {
-                    background: #fff;
-                }
-
-                .eyebrow {
-                    display: inline-flex;
-                    font-size: 18px;
-                    font-weight: 700;
-                    line-height: 1.2em;
-                    padding-bottom: 24px;
-                }
-
-                .eyebrow-small {
-                    display: inline-flex;
-                    font-size: 14px;
-                    font-weight: 700;
-                    line-height: 1.2em;
-                    padding-bottom: 24px;
-                }
-
-                .headline {
-                    font-family:
-                        "Spoqa Han Sans Neo",
-                        "SUIT",
-                        -apple-system,
-                        BlinkMacSystemFont,
-                        "Segoe UI",
-                        Roboto,
-                        "Helvetica Neue",
-                        Arial,
-                        sans-serif;
-                    font-size: 20px;
-                    font-weight: 700;
-                    line-height: 1.3em;
+                .button-wrapper {
+                    padding-bottom: 36px;
                 }
             }
-        }
 
-        .card-column-3 {
-            display: grid;
-            display: -ms-grid;
-            display: -moz-grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-
-            .card-callout {
-                border-radius: 24px;
-                background: #f2f2f7;
-                padding: 32px;
-
-                &.card-callout-white {
-                    background: #fff;
-                }
+            &.card-tile .card-body {
+                padding: 0 12px;
 
                 .eyebrow {
-                    display: inline-flex;
-                    font-size: 18px;
+                    font-size: 16px;
                     font-weight: 700;
-                    line-height: 1.2em;
-                    padding-bottom: 24px;
+                    line-height: 1.4em;
                 }
 
-                .eyebrow-small {
-                    display: inline-flex;
-                    font-size: 14px;
-                    font-weight: 700;
-                    line-height: 1.2em;
-                    padding-bottom: 24px;
+                p {
+                    font-size: 16px;
+                    line-height: 1.4em;
                 }
+            }
 
-                .headline {
-                    font-family:
-                        "Spoqa Han Sans Neo",
-                        "SUIT",
-                        -apple-system,
-                        BlinkMacSystemFont,
-                        "Segoe UI",
-                        Roboto,
-                        "Helvetica Neue",
-                        Arial,
-                        sans-serif;
-                    font-size: 20px;
-                    font-weight: 700;
-                    line-height: 1.3em;
+            .card-media {
+                position: relative;
+
+                picture {
+                    position: absolute;
                 }
+            }
+
+            &.card-tile .card-media {
+                border-radius: 24px;
+                background: #f2f2f7;
+                display: flex;
+                align-self: stretch;
+                align-items: flex-end;
+                justify-content: flex-end;
+                height: 512px;
+                overflow: hidden;
             }
         }
     }

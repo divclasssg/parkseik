@@ -334,9 +334,9 @@
         }
     }
 
-    .card-callout-wrapper {
-        .card-column-2 {
-            .card-callout {
+    .card-group.col-2 {
+        .card {
+            .card-body {
                 .eyebrow-small {
                     &.patient {
                         -webkit-text-fill-color: #0000;

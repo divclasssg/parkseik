@@ -289,122 +289,118 @@ export default function Eum() {
                         </dl>
                     </div>
                 </div>
-                <div className="card-content">
-                    <h3 className="card-eyebrow">Secondary Research.</h3>
-                    <div className="card-wrapper">
-                        <div className="card-set-full-bleed">
-                            <div className="content-body">
-                                <h4 className="eyebrow">문헌 분석</h4>
-                                <p className="headline">
-                                    시간 제약 안에서 의사와 환자는
-                                    <br />
-                                    충분히 소통하지 못했다.
-                                </p>
-                                <p>
-                                    핵심 문제는 정보 부족이 아니라, 환자 경험이 임상 정보로 번역되지
-                                    않는 데 있었습니다. 15개 문헌에서 안심 실패, 번역 실패, 시간
-                                    압박을 핵심 문제로 정리한 뒤, 환자 텍스트와 인터뷰로
-                                    검증했습니다.
-                                </p>
-                                <div className="tags">
-                                    <ul>
-                                        <li>#문헌조사</li>
-                                        <li>#키워드도출</li>
-                                        <li>#코딩프레임설계</li>
-                                    </ul>
-                                </div>
-                                <div className="button-wrapper">
-                                    <Link
-                                        href="/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="button-secondary"
-                                    >
-                                        원문 데이터 보기 &#xE001;
-                                    </Link>
-                                </div>
+                <div className="card-group">
+                    <h3 className="card-group-label">Secondary Research.</h3>
+                    <div className="card card-bleed">
+                        <div className="card-body">
+                            <h4 className="eyebrow">문헌 분석</h4>
+                            <p className="headline">
+                                시간 제약 안에서 의사와 환자는
+                                <br />
+                                충분히 소통하지 못했다.
+                            </p>
+                            <p>
+                                핵심 문제는 정보 부족이 아니라, 환자 경험이 임상 정보로 번역되지
+                                않는 데 있었습니다. 15개 문헌에서 안심 실패, 번역 실패, 시간
+                                압박을 핵심 문제로 정리한 뒤, 환자 텍스트와 인터뷰로
+                                검증했습니다.
+                            </p>
+                            <div className="tags">
+                                <ul>
+                                    <li>#문헌조사</li>
+                                    <li>#키워드도출</li>
+                                    <li>#코딩프레임설계</li>
+                                </ul>
                             </div>
-                            <div className="content-image">
-                                <picture></picture>
+                            <div className="button-wrapper">
+                                <Link
+                                    href="/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="button-secondary"
+                                >
+                                    원문 데이터 보기 &#xE001;
+                                </Link>
                             </div>
                         </div>
-                        <div className="card-set-full-bleed">
-                            <div className="content-body">
-                                <h4 className="eyebrow">환자 데이터 마이닝</h4>
-                                <p className="headline">
-                                    진료 결과를 받아들이지 못한 환자는
-                                    <br />
-                                    스스로 답을 차아 검색을 반복했다.
-                                </p>
-                                <p>
-                                    가장 자주 나타난 문제는 진료 결과가 환자에게 이해되지 않는다는
-                                    것이었고, 환자는 답을 찾아 같은 검색을 반복했습니다.
-                                </p>
-                                <div className="tags">
-                                    <ul>
-                                        <li>#온라인텍스트코딩</li>
-                                        <li>#Python</li>
-                                    </ul>
-                                </div>
-                                <div className="button-wrapper">
-                                    <Link
-                                        href="/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="button-secondary"
-                                    >
-                                        원문 데이터 보기 &#xE001;
-                                    </Link>
-                                </div>
+                        <div className="card-media">
+                            <picture></picture>
+                        </div>
+                    </div>
+                    <div className="card card-bleed">
+                        <div className="card-body">
+                            <h4 className="eyebrow">환자 데이터 마이닝</h4>
+                            <p className="headline">
+                                진료 결과를 받아들이지 못한 환자는
+                                <br />
+                                스스로 답을 차아 검색을 반복했다.
+                            </p>
+                            <p>
+                                가장 자주 나타난 문제는 진료 결과가 환자에게 이해되지 않는다는
+                                것이었고, 환자는 답을 찾아 같은 검색을 반복했습니다.
+                            </p>
+                            <div className="tags">
+                                <ul>
+                                    <li>#온라인텍스트코딩</li>
+                                    <li>#Python</li>
+                                </ul>
                             </div>
-                            <div className="content-image">
-                                <picture></picture>
+                            <div className="button-wrapper">
+                                <Link
+                                    href="/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="button-secondary"
+                                >
+                                    원문 데이터 보기 &#xE001;
+                                </Link>
                             </div>
+                        </div>
+                        <div className="card-media">
+                            <picture></picture>
                         </div>
                     </div>
                 </div>
-                <div className="card-content">
-                    <h3 className="card-eyebrow">Primary Research.</h3>
-                    <div className="card-wrapper">
-                        <div className="card-set-full-bleed">
-                            <div className="content-body">
-                                <h4 className="eyebrow">사용자 인터뷰</h4>
-                                <p className="headline">
-                                    환자는 병원을 전전하며 답을 찾았지만 달라지지 않았고,
-                                    <br />
-                                    의사는 짧은 시간 안에 환자를 온전히 파악하기 어려워했다.
-                                </p>
-                                <p>
-                                    문헌과 온라인 데이터만으로는 이 상황이 진료 현장에서 실제로
-                                    어떻게 벌어지는지 확인하기 어려웠습니다. 그래서 사전 인터뷰로
-                                    질문을 다듬고, 환자와 의사를 1:1로 만나 실제 경험을 들었습니다.
-                                    다음으로 환자와 의료진 관점을 따로 정리한 뒤, 어디서 어긋나는지
-                                    비교했습니다.
-                                </p>
-                                <p>
-                                    다음으로 환자와 의료진 관점을 따로 정리한 뒤, 어디서 어긋나는지
-                                    비교했습니다.
-                                </p>
-                                <div className="tags">
-                                    <ul>
-                                        <li>#사전서면인터뷰</li>
-                                        <li>#1:1심층인터뷰</li>
-                                    </ul>
-                                </div>
-                                <div className="button-wrapper">
-                                    <Link
-                                        href="/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="button-secondary"
-                                    >
-                                        원문 데이터 보기 &#xE001;
-                                    </Link>
-                                </div>
+                <div className="card-group">
+                    <h3 className="card-group-label">Primary Research.</h3>
+                    <div className="card card-bleed">
+                        <div className="card-body">
+                            <h4 className="eyebrow">사용자 인터뷰</h4>
+                            <p className="headline">
+                                환자는 병원을 전전하며 답을 찾았지만 달라지지 않았고,
+                                <br />
+                                의사는 짧은 시간 안에 환자를 온전히 파악하기 어려워했다.
+                            </p>
+                            <p>
+                                문헌과 온라인 데이터만으로는 이 상황이 진료 현장에서 실제로
+                                어떻게 벌어지는지 확인하기 어려웠습니다. 그래서 사전 인터뷰로
+                                질문을 다듬고, 환자와 의사를 1:1로 만나 실제 경험을 들었습니다.
+                                다음으로 환자와 의료진 관점을 따로 정리한 뒤, 어디서 어긋나는지
+                                비교했습니다.
+                            </p>
+                            <p>
+                                다음으로 환자와 의료진 관점을 따로 정리한 뒤, 어디서 어긋나는지
+                                비교했습니다.
+                            </p>
+                            <div className="tags">
+                                <ul>
+                                    <li>#사전서면인터뷰</li>
+                                    <li>#1:1심층인터뷰</li>
+                                </ul>
                             </div>
-                            <div className="content-image">
-                                <picture></picture>
+                            <div className="button-wrapper">
+                                <Link
+                                    href="/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="button-secondary"
+                                >
+                                    원문 데이터 보기 &#xE001;
+                                </Link>
                             </div>
+                        </div>
+                        <div className="card-media">
+                            <picture></picture>
                         </div>
                     </div>
                 </div>
@@ -437,10 +433,9 @@ export default function Eum() {
                             </dd>
                         </dl>
                     </div>
-                    <div className="card-callout-wrapper">
-                        <h3 className="visuallyhidden">환자와 의료진에게 필요했던 것들</h3>
-                        <div className="card-column-2">
-                            <div className="card-callout">
+                    <div className="card-group col-2" aria-label="환자와 의료진에게 필요했던 것들">
+                        <div className="card">
+                            <div className="card-body">
                                 <h4 className="eyebrow-small patient">
                                     &quot;환자에게 필요했던 것&quot;
                                 </h4>
@@ -453,7 +448,9 @@ export default function Eum() {
                                     아니라 이유와 다음 단계가 연결된 구조였습니다.
                                 </p>
                             </div>
-                            <div className="card-callout">
+                        </div>
+                        <div className="card">
+                            <div className="card-body">
                                 <h4 className="eyebrow-small doctor">
                                     &quot;의료진에게 필요했던 것&quot;
                                 </h4>
@@ -511,49 +508,44 @@ export default function Eum() {
                         </Link>
                     </div>
                 </div>
-                <div className="card-content">
-                    <h3 className="visuallyhidden">Develop 방법론</h3>
-                    <div className="card-grid-wrapper">
-                        <div className="card-column-3">
-                            <div className="card">
-                                <div className="card-body">
-                                    <h4 className="eyebrow">브레인스토밍.</h4>
-                                    <p>
-                                        가능한 기능을 먼저 넓게 펼쳤습니다. 처음부터 답을 좁히면
-                                        핵심 가치보다 개별 기능에 끌릴 위험이 커서, 환자와 의사
-                                        양쪽의 아이디어를 폭넓게 수집했습니다.
-                                    </p>
-                                </div>
-                                <div className="card-image">
-                                    <picture></picture>
-                                </div>
-                            </div>
-                            <div className="card">
-                                <div className="card-body">
-                                    <h4 className="eyebrow">MoSCoW.</h4>
-                                    <p>
-                                        핵심 루프에 필요한 기능만 다시 좁혔습니다. 모든 기능을 같은
-                                        무게로 두지 않고, 준비 -- 연결 -- 판단 -- 이해 흐름을 직접
-                                        만드는 기능을 우선순위 기준으로 걸러냈습니다.
-                                    </p>
-                                </div>
-                                <div className="card-image">
-                                    <picture></picture>
-                                </div>
-                            </div>
-                            <div className="card">
-                                <div className="card-body">
-                                    <h4 className="eyebrow">최종 MVP 요약.</h4>
-                                    <p>
-                                        끝가지 남길 최소 범위를 확정했습니다. 우선순위 결과를 다시
-                                        정리해, 판단과 이해를 잇는 핵심 루프만 MVP에 남기고 나머지는
-                                        보류하거나 확장 범위로 분리했습니다.
-                                    </p>
-                                </div>
-                                <div className="card-image">
-                                    <picture></picture>
-                                </div>
-                            </div>
+                <div className="card-group col-3" aria-label="Develop 방법론">
+                    <div className="card card-tile">
+                        <div className="card-body">
+                            <h4 className="eyebrow">브레인스토밍.</h4>
+                            <p>
+                                가능한 기능을 먼저 넓게 펼쳤습니다. 처음부터 답을 좁히면
+                                핵심 가치보다 개별 기능에 끌릴 위험이 커서, 환자와 의사
+                                양쪽의 아이디어를 폭넓게 수집했습니다.
+                            </p>
+                        </div>
+                        <div className="card-media">
+                            <picture></picture>
+                        </div>
+                    </div>
+                    <div className="card card-tile">
+                        <div className="card-body">
+                            <h4 className="eyebrow">MoSCoW.</h4>
+                            <p>
+                                핵심 루프에 필요한 기능만 다시 좁혔습니다. 모든 기능을 같은
+                                무게로 두지 않고, 준비 -- 연결 -- 판단 -- 이해 흐름을 직접
+                                만드는 기능을 우선순위 기준으로 걸러냈습니다.
+                            </p>
+                        </div>
+                        <div className="card-media">
+                            <picture></picture>
+                        </div>
+                    </div>
+                    <div className="card card-tile">
+                        <div className="card-body">
+                            <h4 className="eyebrow">최종 MVP 요약.</h4>
+                            <p>
+                                끝가지 남길 최소 범위를 확정했습니다. 우선순위 결과를 다시
+                                정리해, 판단과 이해를 잇는 핵심 루프만 MVP에 남기고 나머지는
+                                보류하거나 확장 범위로 분리했습니다.
+                            </p>
+                        </div>
+                        <div className="card-media">
+                            <picture></picture>
                         </div>
                     </div>
                 </div>
@@ -609,10 +601,9 @@ export default function Eum() {
                             </dd>
                         </dl>
                     </div>
-                    <div className="card-callout-wrapper">
-                        <h4 className="visuallyhidden">중점적으로 검토한 3가지</h4>
-                        <div className="card-column-3">
-                            <div className="card-callout card-callout-white">
+                    <div className="card-group col-3" aria-label="중점적으로 검토한 3가지">
+                        <div className="card card-white">
+                            <div className="card-body">
                                 <h5 className="eyebrow">관련 법과 규제 검토.</h5>
                                 <p>
                                     AI는 진단이 아니라 참고 정보 범위로 제한해야 했고, 민감한
@@ -620,7 +611,9 @@ export default function Eum() {
                                     비닫힘 경고와 검토 책임 고지가 계속 노출되어야 했습니다.
                                 </p>
                             </div>
-                            <div className="card-callout card-callout-white">
+                        </div>
+                        <div className="card card-white">
+                            <div className="card-body">
                                 <h5 className="eyebrow">의료 데이터 하이어라키 검토.</h5>
                                 <p>
                                     의사용 패널은 좁은 플로팅 구조 안에서 핵심 판단 정보를 먼저
@@ -629,7 +622,9 @@ export default function Eum() {
                                     구조로 정리했습니다.
                                 </p>
                             </div>
-                            <div className="card-callout card-callout-white">
+                        </div>
+                        <div className="card card-white">
+                            <div className="card-body">
                                 <h5 className="eyebrow">의료 UX writing 원칙 검토.</h5>
                                 <p>
                                     환자용 문구는 의학적으로 정확해야 할 뿐 아니라, 건강 문해력을
