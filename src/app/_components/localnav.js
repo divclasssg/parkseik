@@ -1,9 +1,31 @@
+"use client";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import IconClose from "./icons/close";
 
 export default function Localnav() {
+    const [isVisible, setIsVisible] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(false);
+    const navRef = useRef(null);
+    const expandedRef = useRef(null);
+
+    const scrollToSection = (e, href) => {
+        e.preventDefault();
+        const target = document.getElementById(href.slice(1));
+        if (!target) return;
+        const panelHeight = isExpanded ? (expandedRef.current?.offsetHeight ?? 0) : (navRef.current?.offsetHeight ?? 0);
+        const offset = panelHeight + 16 + 16;
+        window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: "smooth" });
+    };
+
+    useEffect(() => {
+        const handleScroll = () => setIsVisible(window.scrollY > 80);
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
-        <nav className="localnav" aria-label="현재 프로젝트">
+        <nav ref={navRef} className={`localnav${isVisible ? " visible" : ""}`} aria-label="현재 프로젝트">
             <div className="localnav-content">
                 <div className="content-collapsed-wrapper">
                     <div className="project-name">
@@ -16,8 +38,9 @@ export default function Localnav() {
                             <button
                                 type="button"
                                 className="button-small button-small-secondary button-project-more"
-                                aria-expanded="false"
+                                aria-expanded={isExpanded}
                                 aria-controls="localnav-expanded"
+                                onClick={() => setIsExpanded(true)}
                             >
                                 프로젝트 더보기
                             </button>
@@ -34,7 +57,7 @@ export default function Localnav() {
                         </li>
                     </ul>
                 </div>
-                <div id="localnav-expanded" className="content-expanded-wrapper">
+                <div ref={expandedRef} id="localnav-expanded" className={`content-expanded-wrapper${isExpanded ? " open" : ""}`}>
                     <nav className="menu-wrapper" aria-label="사이트 메뉴">
                         <ul className="menu-list">
                             <li>
@@ -58,7 +81,7 @@ export default function Localnav() {
                                 </Link>
                             </li>
                         </ul>
-                        <button type="button" className="button-close-expanded">
+                        <button type="button" className="button-close-expanded" onClick={() => setIsExpanded(false)}>
                             <IconClose size={24} />
                         </button>
                     </nav>
@@ -78,16 +101,16 @@ export default function Localnav() {
                     <nav className="contentnav" aria-label="프로젝트 목차">
                         <ul className="contentnav-list">
                             <li>
-                                <Link href="#overview">개요</Link>
+                                <Link href="#overview" onClick={(e) => scrollToSection(e, "#overview")}>개요</Link>
                             </li>
                             <li>
-                                <Link href="#background">배경</Link>
+                                <Link href="#background" onClick={(e) => scrollToSection(e, "#background")}>배경</Link>
                             </li>
                             <li>
-                                <Link href="#designProcess">디자인 프로세스</Link>
+                                <Link href="#designProcess" onClick={(e) => scrollToSection(e, "#designProcess")}>디자인 프로세스</Link>
                             </li>
                             <li>
-                                <Link href="#keytakeaway">주요 시사점</Link>
+                                <Link href="#keytakeaway" onClick={(e) => scrollToSection(e, "#keytakeaway")}>주요 시사점</Link>
                             </li>
                         </ul>
                     </nav>

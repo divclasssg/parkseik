@@ -15,6 +15,12 @@
         sans-serif;
     color: #1d1d1f;
     z-index: 100;
+    transform: translateY(calc(-100% - 20px));
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.visible {
+        transform: translateY(0);
+    }
 
     &-content {
         max-width: 1024px;
@@ -73,13 +79,31 @@
         position: absolute;
         top: 0;
         left: 50%;
-        transform: translate(-50%, 0);
+        transform: translate(-50%, -10px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
         border-radius: 12px;
         border: 1px solid #e5e5ea;
         background: #fff;
         width: 100%;
         max-width: 1024px;
         padding: 24px;
+        transition:
+            opacity 0.22s ease,
+            transform 0.22s ease,
+            visibility 0s linear 0.22s;
+
+        &.open {
+            transform: translate(-50%, 0);
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transition:
+                opacity 0.22s ease,
+                transform 0.22s ease,
+                visibility 0s linear 0s;
+        }
 
         .menu-wrapper {
             display: flex;
