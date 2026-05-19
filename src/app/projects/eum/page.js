@@ -38,6 +38,11 @@ export default function Eum() {
     const ref2 = useRef(null);
     const refs = [ref0, ref1, ref2];
     const [active, setActive] = useState(0);
+    const sectionRef = useRef(null);
+    const activeRef = useRef(active);
+    const isVisibleRef = useRef(true);
+
+    useEffect(() => { activeRef.current = active; }, [active]);
 
     useEffect(() => {
         const total = refs.length;
@@ -52,12 +57,29 @@ export default function Eum() {
     }, []);
 
     useEffect(() => {
+        const section = sectionRef.current;
+        if (!section) return;
+        const observer = new IntersectionObserver(([entry]) => {
+            isVisibleRef.current = entry.isIntersecting;
+            const v = refs[activeRef.current]?.current;
+            if (!v) return;
+            if (entry.isIntersecting) {
+                v.play().catch(() => {});
+            } else {
+                v.pause();
+            }
+        }, { threshold: 0 });
+        observer.observe(section);
+        return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
         refs.forEach((ref, i) => {
             const v = ref.current;
             if (!v) return;
             if (i === active) {
                 v.currentTime = 0;
-                v.play().catch(() => {});
+                if (isVisibleRef.current) v.play().catch(() => {});
             } else {
                 v.pause();
             }
@@ -66,7 +88,7 @@ export default function Eum() {
 
     return (
         <main id="main-content" className="main main-projects main-projects-eum">
-            <section className="section section-hero">
+            <section className="section section-hero" ref={sectionRef}>
                 <div className="video-wrapper" role="group" aria-label="Eum 프로토타입 데모">
                     {VIDEOS.map((v, i) => {
                         const isActive = i === active;
