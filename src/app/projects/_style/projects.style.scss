@@ -420,4 +420,157 @@
             }
         }
     }
+
+    .carousel-slider {
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            gap: 24px;
+            padding: 0 max(80px, calc(50% - 512px));
+
+            .slider-item {
+                flex: 0 0 min(calc(100vw - 160px), 1024px);
+                scroll-snap-align: center;
+                border-radius: 24px;
+                background: #f2f2f7;
+                padding: 24px;
+
+                .slider-body {
+                    .slider-intro {
+                        width: 100%;
+                        max-width: 680px;
+
+                        .slider-eyebrow {
+                            font-size: 14px;
+                            font-weight: 500;
+                            line-height: 1.2em;
+                            color: #66666f;
+                            padding-bottom: 4px;
+                        }
+
+                        .slider-headline {
+                            font-size: 20px;
+                            font-weight: 700;
+                            line-height: 1.2em;
+                            padding-bottom: 24px;
+                        }
+
+                        .slider-subhead {
+                            font-family:
+                                "Spoqa Han Sans Neo",
+                                "SUIT",
+                                -apple-system,
+                                BlinkMacSystemFont,
+                                "Segoe UI",
+                                Roboto,
+                                "Helvetica Neue",
+                                Arial,
+                                sans-serif;
+                            font-size: 18px;
+                            font-weight: 700;
+                            line-height: 1.3em;
+                            color: #3d3d54;
+                        }
+                    }
+
+                    .slider-steps {
+                        padding-top: 16px;
+
+                        .slider-step-list {
+                            .slider-step {
+                                display: flex;
+                                align-items: center;
+                                gap: 8px;
+                                padding-bottom: 4px;
+
+                                dt {
+                                    min-width: 80px;
+                                    font-size: 16px;
+                                    font-weight: 700;
+                                    line-height: 1.4em;
+                                    color: #66666f;
+                                }
+
+                                dd {
+                                    flex: 1;
+                                    font-size: 16px;
+                                    font-weight: 400;
+                                    line-height: 140%;
+                                    color: #66666f;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .slider-nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        width: 100%;
+        max-width: 1024px;
+        margin: 0 auto;
+        padding: 16px 0 0;
+    }
+
+    .slider-dots {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-right: 8px;
+    }
+
+    .slider-dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 100px;
+        background: rgba(29, 29, 31, 0.2);
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition:
+            width 0.3s ease,
+            background 0.2s ease;
+
+        &.active {
+            width: 40px;
+            background: #1d1d1f;
+        }
+    }
+
+    .slider-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: transparent;
+        color: #1d1d1f;
+        border: 1.5px solid #1d1d1f;
+        cursor: pointer;
+        transition:
+            color 0.2s ease,
+            border-color 0.2s ease;
+
+        &:disabled {
+            color: rgba(29, 29, 31, 0.3);
+            border-color: rgba(29, 29, 31, 0.3);
+            cursor: not-allowed;
+        }
+
+        &:not(:disabled):hover {
+            background: rgba(29, 29, 31, 0.06);
+        }
+    }
 }

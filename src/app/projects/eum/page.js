@@ -38,11 +38,24 @@ export default function Eum() {
     const ref2 = useRef(null);
     const refs = [ref0, ref1, ref2];
     const [active, setActive] = useState(0);
+    const [slideIndex, setSlideIndex] = useState(0);
+    const SLIDE_COUNT = 3;
+    const carouselRef = useRef(null);
     const sectionRef = useRef(null);
     const activeRef = useRef(active);
     const isVisibleRef = useRef(true);
 
-    useEffect(() => { activeRef.current = active; }, [active]);
+    const goToSlide = (idx) => {
+        setSlideIndex(idx);
+        const container = carouselRef.current;
+        const items = container?.querySelectorAll(".slider-item");
+        if (!items?.[idx]) return;
+        items[idx].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    };
+
+    useEffect(() => {
+        activeRef.current = active;
+    }, [active]);
 
     useEffect(() => {
         const total = refs.length;
@@ -59,16 +72,19 @@ export default function Eum() {
     useEffect(() => {
         const section = sectionRef.current;
         if (!section) return;
-        const observer = new IntersectionObserver(([entry]) => {
-            isVisibleRef.current = entry.isIntersecting;
-            const v = refs[activeRef.current]?.current;
-            if (!v) return;
-            if (entry.isIntersecting) {
-                v.play().catch(() => {});
-            } else {
-                v.pause();
-            }
-        }, { threshold: 0 });
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                isVisibleRef.current = entry.isIntersecting;
+                const v = refs[activeRef.current]?.current;
+                if (!v) return;
+                if (entry.isIntersecting) {
+                    v.play().catch(() => {});
+                } else {
+                    v.pause();
+                }
+            },
+            { threshold: 0 },
+        );
         observer.observe(section);
         return () => observer.disconnect();
     }, []);
@@ -137,17 +153,19 @@ export default function Eum() {
                 </div>
                 <div className="section-content">
                     <div className="hero-body">
-                        <h2 className="hero-marquee">Eum</h2>
-                        <p className="hero-headline">환자와 의사를 이음.</p>
-                        <p className="hero-violator">기록이 진료가 되고, 진료가 이해로 남는.</p>
-                        <Link
-                            href="/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="button-elevated"
-                        >
-                            Eum Demo 체험하기
-                        </Link>
+                        <div>
+                            <h2 className="hero-marquee">Eum</h2>
+                            <p className="hero-headline">환자와 의사를 이음.</p>
+                            <p className="hero-violator">기록이 진료가 되고, 진료가 이해로 남는.</p>
+                            <Link
+                                href="/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="button-elevated"
+                            >
+                                Eum Demo 체험하기
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -301,9 +319,8 @@ export default function Eum() {
                             </p>
                             <p>
                                 핵심 문제는 정보 부족이 아니라, 환자 경험이 임상 정보로 번역되지
-                                않는 데 있었습니다. 15개 문헌에서 안심 실패, 번역 실패, 시간
-                                압박을 핵심 문제로 정리한 뒤, 환자 텍스트와 인터뷰로
-                                검증했습니다.
+                                않는 데 있었습니다. 15개 문헌에서 안심 실패, 번역 실패, 시간 압박을
+                                핵심 문제로 정리한 뒤, 환자 텍스트와 인터뷰로 검증했습니다.
                             </p>
                             <div className="tags">
                                 <ul>
@@ -372,11 +389,10 @@ export default function Eum() {
                                 의사는 짧은 시간 안에 환자를 온전히 파악하기 어려워했다.
                             </p>
                             <p>
-                                문헌과 온라인 데이터만으로는 이 상황이 진료 현장에서 실제로
-                                어떻게 벌어지는지 확인하기 어려웠습니다. 그래서 사전 인터뷰로
-                                질문을 다듬고, 환자와 의사를 1:1로 만나 실제 경험을 들었습니다.
-                                다음으로 환자와 의료진 관점을 따로 정리한 뒤, 어디서 어긋나는지
-                                비교했습니다.
+                                문헌과 온라인 데이터만으로는 이 상황이 진료 현장에서 실제로 어떻게
+                                벌어지는지 확인하기 어려웠습니다. 그래서 사전 인터뷰로 질문을
+                                다듬고, 환자와 의사를 1:1로 만나 실제 경험을 들었습니다. 다음으로
+                                환자와 의료진 관점을 따로 정리한 뒤, 어디서 어긋나는지 비교했습니다.
                             </p>
                             <p>
                                 다음으로 환자와 의료진 관점을 따로 정리한 뒤, 어디서 어긋나는지
@@ -513,9 +529,9 @@ export default function Eum() {
                         <div className="card-body">
                             <h4 className="eyebrow">브레인스토밍.</h4>
                             <p>
-                                가능한 기능을 먼저 넓게 펼쳤습니다. 처음부터 답을 좁히면
-                                핵심 가치보다 개별 기능에 끌릴 위험이 커서, 환자와 의사
-                                양쪽의 아이디어를 폭넓게 수집했습니다.
+                                가능한 기능을 먼저 넓게 펼쳤습니다. 처음부터 답을 좁히면 핵심
+                                가치보다 개별 기능에 끌릴 위험이 커서, 환자와 의사 양쪽의 아이디어를
+                                폭넓게 수집했습니다.
                             </p>
                         </div>
                         <div className="card-media">
@@ -526,9 +542,9 @@ export default function Eum() {
                         <div className="card-body">
                             <h4 className="eyebrow">MoSCoW.</h4>
                             <p>
-                                핵심 루프에 필요한 기능만 다시 좁혔습니다. 모든 기능을 같은
-                                무게로 두지 않고, 준비 -- 연결 -- 판단 -- 이해 흐름을 직접
-                                만드는 기능을 우선순위 기준으로 걸러냈습니다.
+                                핵심 루프에 필요한 기능만 다시 좁혔습니다. 모든 기능을 같은 무게로
+                                두지 않고, 준비 -- 연결 -- 판단 -- 이해 흐름을 직접 만드는 기능을
+                                우선순위 기준으로 걸러냈습니다.
                             </p>
                         </div>
                         <div className="card-media">
@@ -539,9 +555,9 @@ export default function Eum() {
                         <div className="card-body">
                             <h4 className="eyebrow">최종 MVP 요약.</h4>
                             <p>
-                                끝가지 남길 최소 범위를 확정했습니다. 우선순위 결과를 다시
-                                정리해, 판단과 이해를 잇는 핵심 루프만 MVP에 남기고 나머지는
-                                보류하거나 확장 범위로 분리했습니다.
+                                끝가지 남길 최소 범위를 확정했습니다. 우선순위 결과를 다시 정리해,
+                                판단과 이해를 잇는 핵심 루프만 MVP에 남기고 나머지는 보류하거나 확장
+                                범위로 분리했습니다.
                             </p>
                         </div>
                         <div className="card-media">
@@ -669,17 +685,191 @@ export default function Eum() {
                         </dl>
                     </div>
                 </div>
-                <div className="carousel-slider">
+                <div className="carousel-slider" ref={carouselRef}>
                     <div className="slider-wrapper">
-                        <div className="slider-item">
-                            <div className="slider-content">
-                                <h4 className="slider-eyebrow"></h4>
-                                <h5 className="slider-headline"></h5>
-                                <p className="slider-subhead"></p>
+                        <div className="slider-item slider-item-steps">
+                            <div className="slider-body">
+                                <div className="slider-intro">
+                                    <h4 className="slider-eyebrow">Key Screen 01.</h4>
+                                    <h5 className="slider-headline">증상 기록 &middot; 환자</h5>
+                                    <p className="slider-subhead">
+                                        환자의 자유 입력을, 의사가 읽을 수 있는 기록으로 바꾸는
+                                        시작점입니다.
+                                    </p>
+                                </div>
+                                <div className="slider-steps">
+                                    <dl className="slider-step-list">
+                                        <div className="slider-step">
+                                            <dt>Sketch</dt>
+                                            <dd>
+                                                증상 입력의 핵심 요소와 대화 흐름을 빠르게 탐색.
+                                            </dd>
+                                        </div>
+                                        <div className="slider-step">
+                                            <dt>Low-fi</dt>
+                                            <dd>
+                                                질문, 답변, 심각도 선택, 기록 저장의 우선순위를
+                                                정리.
+                                            </dd>
+                                        </div>
+                                        <div className="slider-step">
+                                            <dt>Prototype</dt>
+                                            <dd>
+                                                바이브 코딩으로 실제 입력과 구조화 저장이 작동하도록
+                                                구현.
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
                             </div>
-                            <div className="slider-image"></div>
+                            <div className="slider-visual"></div>
+                        </div>
+                        <div className="slider-item slider-item-steps">
+                            <div className="slider-body">
+                                <div className="slider-intro">
+                                    <h4 className="slider-eyebrow">Key Screen 02.</h4>
+                                    <h5 className="slider-headline">대시보드 &middot; 의사</h5>
+                                    <p className="slider-subhead">
+                                        짧은 진료 안에서 환자 정보와 AI 브리핑을 빠르게 파악하는
+                                        화면입니다.
+                                    </p>
+                                </div>
+                                <div className="slider-steps">
+                                    <dl className="slider-step-list">
+                                        <div className="slider-step">
+                                            <dt>Sketch</dt>
+                                            <dd>의사가 먼저 봐야 할 정보와 화면 계층 정리.</dd>
+                                        </div>
+                                        <div className="slider-step">
+                                            <dt>Low-fi</dt>
+                                            <dd>프로필, 기록, AI 참고 정보를 읽는 순서를 정리.</dd>
+                                        </div>
+                                        <div className="slider-step">
+                                            <dt>Prototype</dt>
+                                            <dd>
+                                                바이브 코딩으로 실제 AI 브리핑이 연결된 상태로 구현.
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div className="slider-visual"></div>
+                        </div>
+                        <div className="slider-item slider-item-steps">
+                            <div className="slider-body">
+                                <div className="slider-intro">
+                                    <h4 className="slider-eyebrow">Key Screen 03.</h4>
+                                    <h5 className="slider-headline">진료 요약 &middot; 환자</h5>
+                                    <p className="slider-subhead">
+                                        의사의 결과를 환자가 다시 확인할 수 있게 정리한 화면입니다.
+                                    </p>
+                                </div>
+                                <div className="slider-steps">
+                                    <dl className="slider-step-list">
+                                        <div className="slider-step">
+                                            <dt>Sketch</dt>
+                                            <dd>환자에게 꼭 남겨야 할 결과 정보의 뼈대를 정리.</dd>
+                                        </div>
+                                        <div className="slider-step">
+                                            <dt>Low-fi</dt>
+                                            <dd>
+                                                결과, 계획, 처방, 다음 안내의 읽는 순서를 구조화.
+                                            </dd>
+                                        </div>
+                                        <div className="slider-step">
+                                            <dt>Prototype</dt>
+                                            <dd>
+                                                바이브 코딩으로 결과와 다음 안내를 다시 볼 수 있는
+                                                화면으로 구현.
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div className="slider-visual"></div>
                         </div>
                     </div>
+                </div>
+                <div className="slider-nav">
+                    <div className="slider-dots">
+                        {Array.from({ length: SLIDE_COUNT }, (_, i) => (
+                            <button
+                                key={i}
+                                className={`slider-dot${slideIndex === i ? " active" : ""}`}
+                                onClick={() => goToSlide(i)}
+                                aria-label={`슬라이드 ${i + 1}`}
+                            />
+                        ))}
+                    </div>
+                    <button
+                        className="slider-arrow slider-arrow-prev"
+                        onClick={() => goToSlide(Math.max(0, slideIndex - 1))}
+                        disabled={slideIndex === 0}
+                        aria-label="이전 슬라이드"
+                    >
+                        <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        >
+                            <path d="M15 18l-6-6 6-6" />
+                        </svg>
+                    </button>
+                    <button
+                        className="slider-arrow slider-arrow-next"
+                        onClick={() => goToSlide(Math.min(SLIDE_COUNT - 1, slideIndex + 1))}
+                        disabled={slideIndex === SLIDE_COUNT - 1}
+                        aria-label="다음 슬라이드"
+                    >
+                        <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        >
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                    </button>
+                </div>
+            </section>
+            <section className="section section-dd-develop-usability-testing section-half-padding">
+                <div className="section-content">
+                    <div className="section-eyebrow-wrapper">
+                        <h2 className="visuallyhidden">03. Develop</h2>
+                        <h3 className="section-eyebrow">
+                            Usability Testing &middot; 더 선명하게 잇길.
+                        </h3>
+                    </div>
+                    <div className="section-headline">
+                        <p className="headline-regular">
+                            환자는 더 개인화된 설명을,
+                            <br />
+                            의사는 더 빠른 요약을.
+                        </p>
+                    </div>
+                    <p>
+                        핵심 문제는 기능 부족이 아니라, 기록 &middot; AI &middot; 진료가 연결돼도
+                        환자에게는 이해로, 의사에게는 판단으로 바로 이어지지 않는 구조였습니다.
+                    </p>
+                    <p>
+                        사용성 테스트는 MVP가 어디를 더 선명하게 해야 이 강점이 제대로 읽히는지를
+                        확인 할 수 있는 과정이었습니다.
+                    </p>
+                    <p>
+                        검증 결과, 사용자가 크게 느낀 가치는 기록 기능 자체보다 기록이 진료와 이해로
+                        이어지는 연결에 있었습니다. 그래서 이후 수정도 기능을 바꾸는 데보다, 왜 이런
+                        판단이 나왔는지와 다음에 무엇을 해야 하는지가 더 먼저 읽히도록 메시지, 정보
+                        구조, 출처 표기, AI 역할 구분을 다듬는 데 집중했습니다.
+                    </p>
                 </div>
             </section>
         </main>

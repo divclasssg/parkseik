@@ -1,6 +1,6 @@
 # parkseik — 개발 문서
 
-현재 버전: **v0.3.40**
+현재 버전: **v0.3.44**
 
 ## 버전 목록
 
@@ -50,6 +50,10 @@
 | [v0.3.38](./changelog/v0.3.38.md) | /projects/eum hero 영상 visibility 기반 재생 제어 | 2026-05-19 |
 | [v0.3.39](./changelog/v0.3.39.md) | /projects/eum 카드 마크업 구조 재설계 | 2026-05-19 |
 | [v0.3.40](./changelog/v0.3.40.md) | localnav 스크롤 등장·expand 애니메이션 + contentnav smooth scroll | 2026-05-19 |
+| [v0.3.41](./changelog/v0.3.41.md) | carousel-slider 마크업 재설계 (타입 확장성 + 어드민화) | 2026-05-19 |
+| [v0.3.42](./changelog/v0.3.42.md) | carousel-slider 실동작 슬라이더 구현 (좌우 화살표) | 2026-05-19 |
+| [v0.3.43](./changelog/v0.3.43.md) | carousel-slider peek 슬라이더 (인접 카드 노출) | 2026-05-19 |
+| [v0.3.44](./changelog/v0.3.44.md) | carousel-slider 마지막 슬라이드 중앙 정렬 수정 | 2026-05-19 |
 
 ## 패턴 문서
 

@@ -106,28 +106,62 @@
         }
 
         .menu-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 0 16px;
+            padding: 0 0 24px;
 
-            .menu-list {
+            .global-menu {
                 display: flex;
-                gap: 16px;
+                align-items: center;
+                justify-content: space-between;
+                padding-bottom: 16px;
 
-                li {
-                    .link {
-                        font-size: 16px;
-                        font-weight: 600;
-                        line-height: 1em;
-                        color: #66666f;
+                .menu-list {
+                    display: flex;
+                    gap: 16px;
 
-                        &:hover {
-                            color: #1d1d1f;
+                    li {
+                        .link {
+                            font-size: 14px;
+                            font-weight: 600;
+                            line-height: 1em;
+                            color: #66666f;
+
+                            &:hover {
+                                color: #1d1d1f;
+                            }
+
+                            &.active {
+                                color: #1d1d1f;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .projects-menu {
+                .projects-menu-list {
+                    li {
+                        padding-bottom: 8px;
+
+                        &:last-child {
+                            padding-bottom: 0;
                         }
 
-                        &.active {
-                            color: #1d1d1f;
+                        .link {
+                            display: flex;
+                            align-items: center;
+                            gap: 4px;
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 1.2em;
+                            color: #66666f;
+
+                            &:hover {
+                                color: #1d1d1f;
+                            }
+
+                            strong {
+                                font-weight: 700;
+                            }
                         }
                     }
                 }
