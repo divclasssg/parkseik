@@ -341,7 +341,24 @@ export default function Eum() {
                             </div>
                         </div>
                         <div className="card-media">
-                            <picture></picture>
+                            <picture>
+                                <source
+                                    srcSet={`${asset(
+                                        "eum/screenshots/discover/secondary_research/secondary_research_01_o6zgrd.png"
+                                    )} 1x`}
+                                    type="image/png"
+                                />
+                                <img
+                                    src={asset(
+                                        "eum/screenshots/discover/secondary_research/secondary_research_01_o6zgrd.png"
+                                    )}
+                                    alt="문헌 분석 원본 자료 캡쳐본"
+                                    width={1178}
+                                    height={1008}
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </picture>
                         </div>
                     </div>
                     <div className="card card-bleed">
@@ -374,7 +391,24 @@ export default function Eum() {
                             </div>
                         </div>
                         <div className="card-media">
-                            <picture></picture>
+                            <picture>
+                                <source
+                                    srcSet={`${asset(
+                                        "eum/screenshots/discover/secondary_research/secondary_research_02_dkrjye.png"
+                                    )} 1x`}
+                                    type="image/png"
+                                />
+                                <img
+                                    src={asset(
+                                        "eum/screenshots/discover/secondary_research/secondary_research_02_dkrjye.png"
+                                    )}
+                                    alt="환자 데이터 마이닝 원본 자료 캡쳐본"
+                                    width={1164}
+                                    height={1008}
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -416,7 +450,24 @@ export default function Eum() {
                             </div>
                         </div>
                         <div className="card-media">
-                            <picture></picture>
+                            <picture>
+                                <source
+                                    srcSet={`${asset(
+                                        "eum/screenshots/discover/primary_research/primary_research_cshxll.png"
+                                    )} 1x`}
+                                    type="image/png"
+                                />
+                                <img
+                                    src={asset(
+                                        "eum/screenshots/discover/primary_research/primary_research_cshxll.png"
+                                    )}
+                                    alt="사용자 인터뷰 원본 자료 캡쳐본"
+                                    width={1050}
+                                    height={1008}
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </picture>
                         </div>
                     </div>
                 </div>

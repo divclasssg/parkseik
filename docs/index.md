@@ -1,6 +1,6 @@
 # parkseik — 개발 문서
 
-현재 버전: **v0.3.47**
+현재 버전: **v0.3.49**
 
 ## 버전 목록
 
@@ -57,6 +57,8 @@
 | [v0.3.45](./changelog/v0.3.45.md) | /about 페이지 초기 구현 | 2026-05-20 |
 | [v0.3.46](./changelog/v0.3.46.md) | /projects/eum hero monitor 와이드 뷰포트 height-driven 복귀 | 2026-05-20 |
 | [v0.3.47](./changelog/v0.3.47.md) | /projects/eum hero monitor aspect-ratio 깨짐 방지 (min() 단일 식) | 2026-05-20 |
+| [v0.3.48](./changelog/v0.3.48.md) | /projects/eum Discover 섹션 카드 3장 R2 이미지 임베드 + card-bleed media CSS 보완 | 2026-05-20 |
+| [v0.3.49](./changelog/v0.3.49.md) | /projects/eum Discover 카드 이미지 가독성 회복 (retina cap 완화 + card-bleed 보더 + srcset 골조) | 2026-05-20 |
 
 ## 패턴 문서
 

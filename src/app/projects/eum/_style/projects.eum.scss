@@ -174,6 +174,19 @@
     }
 
     // ─────────────────────────────────────────────
+    // Discover — card-bleed 이미지 가독성 회복 (v0.3.49)
+    // 전역 .section-content max-width 1024 + .card-bleed .card-body max-width 360
+    // 조합에서는 card-media flex:1 영역이 ~564px로 좁아 DPR=1 1920에서 소스 PNG 글자가
+    // 50% 다운샘플 후 7~9px로 줄어 안 보임. discover 한정으로 컨테이너 폭을 넓혀
+    // 카드-미디어 표시 폭을 ~800px로 끌어올림.
+    // ─────────────────────────────────────────────
+    .section-dd-discover {
+        .card-bleed .card-body {
+            max-width: 300px;
+        }
+    }
+
+    // ─────────────────────────────────────────────
     // Keyscreen — 스크롤 스크럽: sticky 트랙 안에 row 페어 (callout+asset)
     // 각 row의 좌우 위치는 데이터(`reverse`)로 정적 결정 — swap 토글 없음
     // 패턴: docs/scroll-scrub-pattern.md (v0.3.16에서 구현, row 페어 구조로 재설계)

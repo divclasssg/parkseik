@@ -275,20 +275,17 @@
             }
 
             &.card-bleed {
+                border: 1px solid #e5e5ea;
                 display: flex;
                 gap: 64px;
                 width: 100%;
                 max-width: 1096px;
                 padding: 36px 0 0 36px;
                 margin: 0 auto 24px;
+                overflow: hidden;
 
                 &:last-child {
                     margin-bottom: 0;
-                }
-
-                &:nth-child(even) {
-                    flex-direction: row-reverse;
-                    padding: 48px 48px 0 0;
                 }
             }
 
@@ -404,8 +401,21 @@
                 position: relative;
 
                 picture {
-                    position: absolute;
+                    display: block;
+
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                    }
                 }
+            }
+
+            &.card-bleed .card-media {
+                flex: 1;
+                min-width: 0;
+                // max-width 525 cap 제거(v0.3.49): discover 소스 1050~1178 폭에서 DPR=1 표시 폭 800±로 글자 가독성 확보.
+                // DPR=2 retina는 약간 업스케일 흐림(소스 한계). 후속 2x R2 자산 업로드 시 srcSet으로 해소 예정.
             }
 
             &.card-tile .card-media {
