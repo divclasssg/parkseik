@@ -1,6 +1,6 @@
 # parkseik — 개발 문서
 
-현재 버전: **v0.3.51**
+현재 버전: **v0.3.52**
 
 ## 버전 목록
 
@@ -61,6 +61,7 @@
 | [v0.3.49](./changelog/v0.3.49.md) | /projects/eum Discover 카드 이미지 가독성 회복 (retina cap 완화 + card-bleed 보더 + srcset 골조) | 2026-05-20 |
 | [v0.3.50](./changelog/v0.3.50.md) | /projects/eum Define 섹션 methodology scroll-container 이식 (1600vh sticky, 4 아이템 RAF) | 2026-05-20 |
 | [v0.3.51](./changelog/v0.3.51.md) | /projects/eum methodology callout 흐림 해결 + headline 줄바꿈 + 트레일링 여백 제거 | 2026-05-20 |
+| [v0.3.52](./changelog/v0.3.52.md) | /projects/eum Develop 카드 3장 process 스크린샷 임베드 (브레인스토밍/MoSCoW/MVP, 328×456 retina-정합) | 2026-05-20 |
 
 ## 패턴 문서
 

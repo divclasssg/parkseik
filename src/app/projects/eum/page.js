@@ -587,7 +587,24 @@ export default function Eum() {
                             </p>
                         </div>
                         <div className="card-media">
-                            <picture></picture>
+                            <picture>
+                                <source
+                                    srcSet={`${asset(
+                                        "eum/screenshots/develop/develop-method-brainstorming_dfkavp.png"
+                                    )} 1x`}
+                                    type="image/png"
+                                />
+                                <img
+                                    src={asset(
+                                        "eum/screenshots/develop/develop-method-brainstorming_dfkavp.png"
+                                    )}
+                                    alt="브레인스토밍 원본 자료 캡쳐본"
+                                    width={656}
+                                    height={912}
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </picture>
                         </div>
                     </div>
                     <div className="card card-tile">
@@ -600,7 +617,24 @@ export default function Eum() {
                             </p>
                         </div>
                         <div className="card-media">
-                            <picture></picture>
+                            <picture>
+                                <source
+                                    srcSet={`${asset(
+                                        "eum/screenshots/develop/develop-method-moscow_ii0qvn.png"
+                                    )} 1x`}
+                                    type="image/png"
+                                />
+                                <img
+                                    src={asset(
+                                        "eum/screenshots/develop/develop-method-moscow_ii0qvn.png"
+                                    )}
+                                    alt="MoSCoW 원본 자료 캡쳐본"
+                                    width={656}
+                                    height={912}
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </picture>
                         </div>
                     </div>
                     <div className="card card-tile">
@@ -613,7 +647,24 @@ export default function Eum() {
                             </p>
                         </div>
                         <div className="card-media">
-                            <picture></picture>
+                            <picture>
+                                <source
+                                    srcSet={`${asset(
+                                        "eum/screenshots/develop/develop-method-mvp_lsl3nn.png"
+                                    )} 1x`}
+                                    type="image/png"
+                                />
+                                <img
+                                    src={asset(
+                                        "eum/screenshots/develop/develop-method-mvp_lsl3nn.png"
+                                    )}
+                                    alt="최종 MVP 요약 원본 자료 캡쳐본"
+                                    width={656}
+                                    height={912}
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </picture>
                         </div>
                     </div>
                 </div>
