@@ -130,17 +130,23 @@
             }
 
             // 02: CSS 미니멀 모니터 베젤.
-            // v0.3.35: video-wrapper max-width: 1200px 도입으로 width-driven 전환.
-            // 이전엔 height: 100%(wrapper)→ aspect-ratio→ width 순 height-driven이었으나,
-            // wrapper가 1200px로 캡되면 screen 자연 너비가 frame content를 초과해 넘쳐남.
-            // 따라서 frame width: 100%(wrapper) → screen width: 100% → aspect-ratio로 height 결정.
-            // v0.3.34: monitor는 phone과 달리 중앙 정렬 유지 (전폭 활용이 모니터 mockup 의도).
+            // v0.3.34: monitor는 phone과 달리 중앙 정렬 (전폭 활용이 모니터 mockup 의도).
+            // v0.3.35: wrapper max-width 1200 도입 시 height-driven이 wrapper width를 초과 → width-driven으로 전환.
+            // → 1920×1080처럼 와이드+짧은 뷰포트에선 monitor가 1200×779로 작아져 wrapper 높이 876 중 위·아래 빈 공간.
+            // v0.3.46: wrapper 1200 폭 제약을 우회하면서 height-driven 복귀를 시도했으나, height: 100%(공통) + max-width clamp + aspect-ratio 조합은
+            //         브라우저가 aspect 재계산을 보장하지 않음(특히 2560 retina같이 max-width가 binding되는 케이스에서 aspect 깨짐 가능).
+            // v0.3.47: width를 `min(height-driven, viewport-bound, 1512 retina cap)`로 단일 식 명시 → height: auto + aspect-ratio가 항상 정확히 도출.
+            //         · height-driven : `(100svh - 204px) * 3024 / 1964` (wrapper 내부 높이 = 100svh - nav 108 - inset 96)
+            //         · viewport-bound: `100vw - 96px` (좌우 48px 마진 확보)
+            //         · 1512 cap: 소스 3024 ÷ 2 → 레티나(DPR 2) 흐림 방지
+            // `left: 50%`는 wrapper 중심이지만 wrapper가 viewport 중앙에 위치하므로 결과적으로 viewport 중앙 정렬.
+            // box-sizing: border-box + aspect-ratio: outer 박스 기준이라 inner screen은 padding만큼 ~1% 미스매치 → video object-fit: cover로 흡수.
             .monitor-frame {
                 left: 50%;
                 transform: translate(-50%, -50%);
-                width: 100%;
-                max-width: 100%;
-                height: auto; // 공통 height: 100% 오버라이드 — screen content가 높이 결정
+                width: min(calc((100svh - 204px) * 3024 / 1964), calc(100vw - 96px), 1512px);
+                height: auto;
+                aspect-ratio: 3024 / 1964;
                 padding: 12px;
                 background: #1d1d1f;
                 border-radius: 16px;
@@ -148,9 +154,7 @@
 
                 .monitor-frame-screen {
                     width: 100%;
-                    height: auto; // aspect-ratio + width → 높이 결정
-                    max-width: 1512px; // 레티나 보장: 비디오 소스 3024 ÷ 2
-                    aspect-ratio: 3024 / 1964;
+                    height: 100%;
                     background: #000;
                     border-radius: 6px;
                     overflow: hidden;
@@ -163,7 +167,7 @@
                     max-width: none;
                     aspect-ratio: auto;
                     background: transparent;
-                    object-fit: cover; // aspect 정확 일치 → 실제 잘림 0
+                    object-fit: cover;
                 }
             }
         }

@@ -1,6 +1,6 @@
 # parkseik — 개발 문서
 
-현재 버전: **v0.3.45**
+현재 버전: **v0.3.47**
 
 ## 버전 목록
 
@@ -55,6 +55,8 @@
 | [v0.3.43](./changelog/v0.3.43.md) | carousel-slider peek 슬라이더 (인접 카드 노출) | 2026-05-19 |
 | [v0.3.44](./changelog/v0.3.44.md) | carousel-slider 마지막 슬라이드 중앙 정렬 수정 | 2026-05-19 |
 | [v0.3.45](./changelog/v0.3.45.md) | /about 페이지 초기 구현 | 2026-05-20 |
+| [v0.3.46](./changelog/v0.3.46.md) | /projects/eum hero monitor 와이드 뷰포트 height-driven 복귀 | 2026-05-20 |
+| [v0.3.47](./changelog/v0.3.47.md) | /projects/eum hero monitor aspect-ratio 깨짐 방지 (min() 단일 식) | 2026-05-20 |
 
 ## 패턴 문서
 
