@@ -338,7 +338,7 @@
 
                 .eyebrow {
                     font-size: 16px;
-                    font-weight: 500;
+                    font-weight: 700;
                     line-height: 1em;
                     color: #66666f;
                     padding-bottom: 12px;
@@ -448,24 +448,26 @@
     }
 
     .carousel-slider {
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: none;
-        &::-webkit-scrollbar {
-            display: none;
-        }
+        // portfolio 슬라이더 패턴 이식 (v0.3.56):
+        // scroll-snap이 아니라 JS 제어 translateX 방식. overflow: hidden + transition으로 부드럽게 슬라이드.
+        overflow: hidden;
 
         .slider-wrapper {
             display: flex;
             gap: 24px;
-            padding: 0 max(80px, calc(50% - 512px));
+            // portfolio 패턴: 활성 카드 좌측 edge를 section-content 좌측에 정렬
+            padding-left: max(80px, calc(50% - 512px));
+            // portfolio 패턴: 마지막 카드 active 시 우측 잉여 공간 (= (V - 696)/2)
+            padding-right: max(80px, calc(50% - 348px));
+            transition: transform 0.6s ease;
+            will-change: transform;
 
             .slider-item {
-                flex: 0 0 min(calc(100vw - 160px), 1024px);
-                scroll-snap-align: center;
+                // 696 = slider-visual 이미지 max 648 + 카드 padding 24×2 → 이미지가 카드를 정확히 채움
+                flex: 0 0 min(calc(100vw - 160px), 696px);
                 border-radius: 24px;
                 background: #f2f2f7;
-                padding: 24px;
+                padding: 32px;
 
                 .slider-body {
                     .slider-intro {
@@ -532,6 +534,24 @@
                                 }
                             }
                         }
+                    }
+                }
+
+                .slider-visual {
+                    width: 100%;
+                    max-width: 648px; // retina cap: 소스 1296 ÷ 2. DPR=2까지 sharp.
+                    margin: 24px auto 0;
+
+                    picture {
+                        display: block;
+                        width: 100%;
+                    }
+
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                        border-radius: 12px;
                     }
                 }
             }

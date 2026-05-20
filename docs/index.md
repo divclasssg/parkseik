@@ -1,6 +1,6 @@
 # parkseik — 개발 문서
 
-현재 버전: **v0.3.52**
+현재 버전: **v0.3.56**
 
 ## 버전 목록
 
@@ -62,6 +62,10 @@
 | [v0.3.50](./changelog/v0.3.50.md) | /projects/eum Define 섹션 methodology scroll-container 이식 (1600vh sticky, 4 아이템 RAF) | 2026-05-20 |
 | [v0.3.51](./changelog/v0.3.51.md) | /projects/eum methodology callout 흐림 해결 + headline 줄바꿈 + 트레일링 여백 제거 | 2026-05-20 |
 | [v0.3.52](./changelog/v0.3.52.md) | /projects/eum Develop 카드 3장 process 스크린샷 임베드 (브레인스토밍/MoSCoW/MVP, 328×456 retina-정합) | 2026-05-20 |
+| [v0.3.53](./changelog/v0.3.53.md) | /projects/eum carousel-slider 3장 Prototype Key Screens 임베드 (max-width 648 retina-정합 + visuallyhidden h3) | 2026-05-20 |
+| [v0.3.54](./changelog/v0.3.54.md) | /projects/eum carousel-slider 카드 폭 축소 (1024 → 696, 이미지 정합) | 2026-05-20 |
+| [v0.3.55](./changelog/v0.3.55.md) | /projects/eum carousel-slider 첫·마지막 카드 그리드 정렬 (snap edge to section-content, peek full viewport, first/last/center snap 분기) | 2026-05-20 |
+| [v0.3.56](./changelog/v0.3.56.md) | /projects/eum carousel-slider portfolio 패턴 이식 (scroll-snap → JS translateX, 활성 카드 좌측 정렬) | 2026-05-20 |
 
 ## 패턴 문서
 

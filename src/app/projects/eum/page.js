@@ -41,17 +41,12 @@ export default function Eum() {
     const [active, setActive] = useState(0);
     const [slideIndex, setSlideIndex] = useState(0);
     const SLIDE_COUNT = 3;
-    const carouselRef = useRef(null);
     const sectionRef = useRef(null);
     const activeRef = useRef(active);
     const isVisibleRef = useRef(true);
 
     const goToSlide = (idx) => {
         setSlideIndex(idx);
-        const container = carouselRef.current;
-        const items = container?.querySelectorAll(".slider-item");
-        if (!items?.[idx]) return;
-        items[idx].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
     };
 
     useEffect(() => {
@@ -335,7 +330,7 @@ export default function Eum() {
                                     href="/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="button-secondary"
+                                    className="button-primary"
                                 >
                                     원문 데이터 보기 &#xE001;
                                 </Link>
@@ -345,13 +340,13 @@ export default function Eum() {
                             <picture>
                                 <source
                                     srcSet={`${asset(
-                                        "eum/screenshots/discover/secondary_research/secondary_research_01_o6zgrd.png"
+                                        "eum/screenshots/discover/secondary_research/secondary_research_01_o6zgrd.png",
                                     )} 1x`}
                                     type="image/png"
                                 />
                                 <img
                                     src={asset(
-                                        "eum/screenshots/discover/secondary_research/secondary_research_01_o6zgrd.png"
+                                        "eum/screenshots/discover/secondary_research/secondary_research_01_o6zgrd.png",
                                     )}
                                     alt="문헌 분석 원본 자료 캡쳐본"
                                     width={1178}
@@ -385,7 +380,7 @@ export default function Eum() {
                                     href="/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="button-secondary"
+                                    className="button-primary"
                                 >
                                     원문 데이터 보기 &#xE001;
                                 </Link>
@@ -395,13 +390,13 @@ export default function Eum() {
                             <picture>
                                 <source
                                     srcSet={`${asset(
-                                        "eum/screenshots/discover/secondary_research/secondary_research_02_dkrjye.png"
+                                        "eum/screenshots/discover/secondary_research/secondary_research_02_dkrjye.png",
                                     )} 1x`}
                                     type="image/png"
                                 />
                                 <img
                                     src={asset(
-                                        "eum/screenshots/discover/secondary_research/secondary_research_02_dkrjye.png"
+                                        "eum/screenshots/discover/secondary_research/secondary_research_02_dkrjye.png",
                                     )}
                                     alt="환자 데이터 마이닝 원본 자료 캡쳐본"
                                     width={1164}
@@ -444,7 +439,7 @@ export default function Eum() {
                                     href="/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="button-secondary"
+                                    className="button-primary"
                                 >
                                     원문 데이터 보기 &#xE001;
                                 </Link>
@@ -454,13 +449,13 @@ export default function Eum() {
                             <picture>
                                 <source
                                     srcSet={`${asset(
-                                        "eum/screenshots/discover/primary_research/primary_research_cshxll.png"
+                                        "eum/screenshots/discover/primary_research/primary_research_cshxll.png",
                                     )} 1x`}
                                     type="image/png"
                                 />
                                 <img
                                     src={asset(
-                                        "eum/screenshots/discover/primary_research/primary_research_cshxll.png"
+                                        "eum/screenshots/discover/primary_research/primary_research_cshxll.png",
                                     )}
                                     alt="사용자 인터뷰 원본 자료 캡쳐본"
                                     width={1050}
@@ -590,13 +585,13 @@ export default function Eum() {
                             <picture>
                                 <source
                                     srcSet={`${asset(
-                                        "eum/screenshots/develop/develop-method-brainstorming_dfkavp.png"
+                                        "eum/screenshots/develop/develop-method-brainstorming_dfkavp.png",
                                     )} 1x`}
                                     type="image/png"
                                 />
                                 <img
                                     src={asset(
-                                        "eum/screenshots/develop/develop-method-brainstorming_dfkavp.png"
+                                        "eum/screenshots/develop/develop-method-brainstorming_dfkavp.png",
                                     )}
                                     alt="브레인스토밍 원본 자료 캡쳐본"
                                     width={656}
@@ -620,13 +615,13 @@ export default function Eum() {
                             <picture>
                                 <source
                                     srcSet={`${asset(
-                                        "eum/screenshots/develop/develop-method-moscow_ii0qvn.png"
+                                        "eum/screenshots/develop/develop-method-moscow_ii0qvn.png",
                                     )} 1x`}
                                     type="image/png"
                                 />
                                 <img
                                     src={asset(
-                                        "eum/screenshots/develop/develop-method-moscow_ii0qvn.png"
+                                        "eum/screenshots/develop/develop-method-moscow_ii0qvn.png",
                                     )}
                                     alt="MoSCoW 원본 자료 캡쳐본"
                                     width={656}
@@ -650,13 +645,13 @@ export default function Eum() {
                             <picture>
                                 <source
                                     srcSet={`${asset(
-                                        "eum/screenshots/develop/develop-method-mvp_lsl3nn.png"
+                                        "eum/screenshots/develop/develop-method-mvp_lsl3nn.png",
                                     )} 1x`}
                                     type="image/png"
                                 />
                                 <img
                                     src={asset(
-                                        "eum/screenshots/develop/develop-method-mvp_lsl3nn.png"
+                                        "eum/screenshots/develop/develop-method-mvp_lsl3nn.png",
                                     )}
                                     alt="최종 MVP 요약 원본 자료 캡쳐본"
                                     width={656}
@@ -788,8 +783,14 @@ export default function Eum() {
                         </dl>
                     </div>
                 </div>
-                <div className="carousel-slider" ref={carouselRef}>
-                    <div className="slider-wrapper">
+                <h3 className="visuallyhidden">Prototype Key Screens</h3>
+                <div className="carousel-slider">
+                    <div
+                        className="slider-wrapper"
+                        style={{
+                            transform: `translateX(calc(-${slideIndex} * (696px + 24px)))`,
+                        }}
+                    >
                         <div className="slider-item slider-item-steps">
                             <div className="slider-body">
                                 <div className="slider-intro">
@@ -825,7 +826,26 @@ export default function Eum() {
                                     </dl>
                                 </div>
                             </div>
-                            <div className="slider-visual"></div>
+                            <div className="slider-visual">
+                                <picture>
+                                    <source
+                                        srcSet={`${asset(
+                                            "eum/screenshots/develop/img-keyscreens-01_hodl0f.png",
+                                        )} 1x`}
+                                        type="image/png"
+                                    />
+                                    <img
+                                        src={asset(
+                                            "eum/screenshots/develop/img-keyscreens-01_hodl0f.png",
+                                        )}
+                                        alt="증상 기록 키스크린 캡쳐본"
+                                        width={1296}
+                                        height={474}
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </picture>
+                            </div>
                         </div>
                         <div className="slider-item slider-item-steps">
                             <div className="slider-body">
@@ -856,7 +876,26 @@ export default function Eum() {
                                     </dl>
                                 </div>
                             </div>
-                            <div className="slider-visual"></div>
+                            <div className="slider-visual">
+                                <picture>
+                                    <source
+                                        srcSet={`${asset(
+                                            "eum/screenshots/develop/img-keyscreens-02_te2jdq.png",
+                                        )} 1x`}
+                                        type="image/png"
+                                    />
+                                    <img
+                                        src={asset(
+                                            "eum/screenshots/develop/img-keyscreens-02_te2jdq.png",
+                                        )}
+                                        alt="의사 대시보드 키스크린 캡쳐본"
+                                        width={1296}
+                                        height={474}
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </picture>
+                            </div>
                         </div>
                         <div className="slider-item slider-item-steps">
                             <div className="slider-body">
@@ -889,7 +928,26 @@ export default function Eum() {
                                     </dl>
                                 </div>
                             </div>
-                            <div className="slider-visual"></div>
+                            <div className="slider-visual">
+                                <picture>
+                                    <source
+                                        srcSet={`${asset(
+                                            "eum/screenshots/develop/img-keyscreens-03_dvgeex.png",
+                                        )} 1x`}
+                                        type="image/png"
+                                    />
+                                    <img
+                                        src={asset(
+                                            "eum/screenshots/develop/img-keyscreens-03_dvgeex.png",
+                                        )}
+                                        alt="환자 진료 요약 키스크린 캡쳐본"
+                                        width={1296}
+                                        height={474}
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </picture>
+                            </div>
                         </div>
                     </div>
                 </div>
