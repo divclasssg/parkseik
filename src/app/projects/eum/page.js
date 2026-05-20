@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { asset } from "@/_lib/media";
 import SectionKeyScreens from "./_components/sectionkeyscreens";
+import SectionDefineMethodology from "./_components/sectionDefineMethodology";
 
 // Hero mp4 video 자동재생.
 // v0.3.21~v0.3.29의 hi/lo + DPR 분기는 lo가 소스÷2로 사전 다운샘플된 H.264라
@@ -533,8 +534,8 @@ export default function Eum() {
                         </div>
                     </div>
                 </div>
+                <SectionDefineMethodology />
             </section>
-            {/* define-methodology-scroll-container */}
             <section className="section section-dd-develop">
                 <div className="section-content">
                     <div className="section-eyebrow-wrapper">

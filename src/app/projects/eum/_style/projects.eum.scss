@@ -187,6 +187,209 @@
     }
 
     // ─────────────────────────────────────────────
+    // Define — methodology scroll-container (v0.3.50)
+    // 4 아이템 × 400vh = 1600vh sticky 스크롤. 이미지 레이어(z:1)는 아래에서 슬라이드 업·DIM,
+    // 텍스트 레이어(z:2)는 마스크 그라데이션과 함께 fade-in/HOLD/fade-out. portfolio sectionDefine 이식.
+    // 모바일(≤640px)은 sticky 무효화 + 세로 스택으로 fallback.
+    // ─────────────────────────────────────────────
+    .section-dd-define {
+        .define-methodology-scroll-container {
+            position: relative;
+            height: 1600vh;
+        }
+
+        .define-methodology-sticky {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .define-methodology-asset-area {
+            position: absolute;
+            inset: 64px 0 0 0; // localnav 64px 보정
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .define-methodology-asset {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            will-change: transform, opacity;
+            transform: translate3d(0, 15vh, 0);
+
+            picture {
+                display: block;
+                width: 100%;
+                // retina cap: 가장 작은 소스(2340w) ÷ 2 = 1170 → 모든 자료 DPR=2까지 sharp
+                max-width: 1170px;
+                max-height: 88vh;
+            }
+
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+                max-height: 88vh;
+                object-fit: contain;
+            }
+        }
+
+        .define-methodology-callout-area {
+            position: absolute;
+            inset: 64px 0 0 0;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            mask-image: linear-gradient(
+                to bottom,
+                transparent 0%,
+                black 18%,
+                black 82%,
+                transparent 100%
+            );
+            -webkit-mask-image: linear-gradient(
+                to bottom,
+                transparent 0%,
+                black 18%,
+                black 82%,
+                transparent 100%
+            );
+            pointer-events: none;
+        }
+
+        .define-methodology-callout {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 24px;
+            box-sizing: border-box;
+            opacity: 0;
+            will-change: transform, opacity;
+            transform: translate3d(0, 120px, 0);
+        }
+
+        .define-methodology-callout-eyebrow {
+            font-family:
+                "Spoqa Han Sans Neo",
+                "SUIT",
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                "Helvetica Neue",
+                Arial,
+                sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1em;
+            color: #66666f;
+            padding-bottom: 8px;
+        }
+
+        .define-methodology-callout-headline {
+            font-family:
+                "Spoqa Han Sans Neo",
+                "SUIT",
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                "Helvetica Neue",
+                Arial,
+                sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.3em;
+            padding-bottom: 16px;
+            white-space: pre-wrap;
+        }
+
+        .define-methodology-callout-copy {
+            font-size: 18px;
+            line-height: 1.4em;
+            padding-bottom: 12px;
+
+            &:last-of-type {
+                padding-bottom: 0;
+            }
+        }
+
+        .define-methodology-callout .tags {
+            padding: 20px 0 40px;
+
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+
+                li {
+                    border-radius: 24px;
+                    background: #f2f2f7;
+                    display: inline-flex;
+                    height: 36px;
+                    padding: 0 12px;
+                    align-items: center;
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 1em;
+                }
+            }
+        }
+
+        .define-methodology-callout .button-primary {
+            align-self: flex-start;
+        }
+
+        @media (max-width: 640px) {
+            // sticky 무효화: 모바일은 4개 아이템을 세로 스택으로 평탄 노출
+            .define-methodology-scroll-container {
+                height: auto;
+            }
+
+            .define-methodology-sticky {
+                position: static;
+                height: auto;
+                overflow: visible;
+            }
+
+            .define-methodology-asset-area,
+            .define-methodology-callout-area {
+                position: static;
+                inset: auto;
+                mask-image: none;
+                -webkit-mask-image: none;
+                display: block;
+            }
+
+            .define-methodology-asset,
+            .define-methodology-callout {
+                position: static;
+                inset: auto;
+                opacity: 1 !important;
+                transform: none !important;
+                pointer-events: auto !important;
+                padding-bottom: 48px;
+            }
+
+            .define-methodology-asset picture {
+                max-width: 480px;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    // ─────────────────────────────────────────────
     // Keyscreen — 스크롤 스크럽: sticky 트랙 안에 row 페어 (callout+asset)
     // 각 row의 좌우 위치는 데이터(`reverse`)로 정적 결정 — swap 토글 없음
     // 패턴: docs/scroll-scrub-pattern.md (v0.3.16에서 구현, row 페어 구조로 재설계)
