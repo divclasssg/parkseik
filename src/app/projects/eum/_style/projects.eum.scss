@@ -90,7 +90,8 @@
             // v0.3.34: phone 우측 끝을 monitor 02 우측 끝과 정렬.
             // v0.3.37: wrapper max-width 도입 후 monitor 우측 계산식이 무효화됨. right: 0으로 단순화.
             .phone-frame {
-                right: 0;
+                right: auto;
+                left: calc(50% - 60px); // 50% - 512(hero-body half) + 444(text card est.) + 8(gap)
                 transform: translateY(-50%);
                 aspect-ratio: 1470 / 3000;
 
