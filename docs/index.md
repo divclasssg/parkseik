@@ -1,6 +1,6 @@
 # parkseik — 개발 문서
 
-현재 버전: **v0.3.58**
+현재 버전: **v0.3.59**
 
 ## 버전 목록
 
@@ -68,6 +68,7 @@
 | [v0.3.56](./changelog/v0.3.56.md) | /projects/eum carousel-slider portfolio 패턴 이식 (scroll-snap → JS translateX, 활성 카드 좌측 정렬) | 2026-05-20 |
 | [v0.3.57](./changelog/v0.3.57.md) | /projects/eum hero phone-frame-01·03 텍스트 카드에 밀착 | 2026-05-21 |
 | [v0.3.58](./changelog/v0.3.58.md) | homenav·subnav 프로젝트 링크 project-meta + project-summary 2단 구조 | 2026-05-21 |
+| [v0.3.59](./changelog/v0.3.59.md) | /projects/eum Deliver UT 결과 6개 항목 블록 추가 | 2026-05-22 |
 
 ## 패턴 문서
 
