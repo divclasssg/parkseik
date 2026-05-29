@@ -23,4 +23,52 @@
         line-height: 1em;
         color: #1d1d1f;
     }
+
+    &-sub {
+        background: #1d1d1f;
+        height: auto;
+        color: #fff;
+        padding: 48px 0 0;
+
+        .globalfooter-content {
+            width: 100%;
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0;
+
+            .globalfooter-headline {
+                font-size: 18px;
+                font-weight: 500;
+                padding-bottom: 8px;
+            }
+
+            .globalfooternav {
+                padding-bottom: 48px;
+
+                ul {
+                    display: flex;
+                    gap: 16px;
+
+                    li {
+                        a {
+                            font-size: 16px;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+
+            .globalfooter-info {
+                display: flex;
+                gap: 16px;
+                font-size: 16px;
+                font-weight: 400;
+            }
+
+            .globalfooter-legal-copyright {
+                color: #8e8e93;
+                padding: 12px 0 32px;
+            }
+        }
+    }
 }
